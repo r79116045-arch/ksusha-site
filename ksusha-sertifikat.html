@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><title>Подарочный сертификат — Ксения Журавлёва</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{display:flex;justify-content:center;align-items:center;min-height:100vh;background:#e8ddd0;font-family:'Inter',sans-serif}
+  .cert{width:700px;background:#FDFAF5;border-radius:28px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.10)}
+  .cert-top{background:linear-gradient(135deg,#E8D5C4,#C4D7C1);padding:40px;text-align:center}
+  .cert-top .icon{font-size:56px;margin-bottom:12px}
+  .cert-top h1{font-family:'Playfair Display',Georgia,serif;font-size:32px;color:#3D3929;margin-bottom:4px}
+  .cert-top .sub{font-size:14px;color:#5C5540}
+  .cert-body{padding:36px 48px}
+  .cert-body .to{font-size:14px;color:#A0937D;margin-bottom:4px}
+  .cert-body .name{font-size:24px;font-family:'Playfair Display',serif;color:#3D3929;border-bottom:1px solid rgba(160,147,125,0.2);padding-bottom:8px;margin-bottom:24px;min-height:40px}
+  .cert-details{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px}
+  .cert-detail label{font-size:11px;text-transform:uppercase;letter-spacing:0.05em;color:#A0937D;margin-bottom:4px;display:block}
+  .cert-detail .val{font-size:16px;color:#3D3929;font-weight:500}
+  .cert-price{text-align:center;padding:20px;background:rgba(196,215,193,0.2);border-radius:16px;margin-bottom:24px}
+  .cert-price .big{font-family:'Playfair Display',serif;font-size:36px;color:#3D3929}
+  .cert-price .note{font-size:13px;color:#A0937D}
+  .cert-footer{text-align:center;font-size:13px;color:#A0937D;padding:20px 48px 32px;border-top:1px solid rgba(160,147,125,0.15)}
+  .cert-footer p{margin-bottom:4px}
+  @media print{body{background:#fff}.cert{box-shadow:none;border-radius:0}}
+</style>
+</head>
+<body>
+<div class="cert">
+  <div class="cert-top">
+    <div class="icon">🎁</div>
+    <h1>Подарочный сертификат</h1>
+    <div class="sub">на психологическую консультацию</div>
+  </div>
+  <div class="cert-body">
+    <div class="to">Для:</div>
+    <div class="name"></div>
+    <div class="cert-details">
+      <div class="cert-detail"><label>От кого</label><div class="val"></div></div>
+      <div class="cert-detail"><label>Срок действия</label><div class="val">6 месяцев</div></div>
+      <div class="cert-detail"><label>Формат</label><div class="val">Онлайн, 60–90 мин</div></div>
+      <div class="cert-detail"><label>Номер сертификата</label><div class="val"></div></div>
+    </div>
+    <div class="cert-price">
+      <div class="big">2 000 ₽</div>
+      <div class="note">индивидуальная консультация</div>
+    </div>
+  </div>
+  <div class="cert-footer">
+    <p>Ксения Журавлёва — психолог, семейный терапевт</p>
+    <p>t.me/zhuravleva_mind · komar11123@inbox.ru · +7 909 738 87 30</p>
+  </div>
+</div>
+</body>
+</html>

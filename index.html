@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ксения Журавлёва — психолог и семейный терапевт</title>
+<meta name="description" content="Психолог и семейный терапевт Ксения Журавлёва. Индивидуальные и парные консультации онлайн: отношения, тревога, самооценка, выгорание. Первая встреча — 2 000 ₽.">
+<link rel="icon" type="image/png" href="ksusha-logo.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ксения Журавлёва — психолог и семейный терапевт">
+<meta property="og:description" content="Бережная поддержка и реальные изменения. Индивидуальные и парные консультации онлайн.">
+<meta property="og:image" content="https://ксенияжуравлёва.рф/ksusha-hero.jpg">
+<meta property="og:url" content="https://ксенияжуравлёва.рф/">
+<meta property="og:locale" content="ru_RU">
+<link href="fonts/fonts-local.css" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
+  body{font-family:'Inter',-apple-system,sans-serif;font-weight:400;font-size:17px;line-height:1.65;color:#3D3929;background:#FDFAF5;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.2}
+
+  /* PALETTE: Cream #FDFAF5 | Sage #C4D7C1 | Peach #E8D5C4 | Clay #A0937D | Terracotta #8B6F5C | Ink #3D3929 */
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,250,245,0.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(160,147,125,0.15);padding:0 24px}
+  .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;height:64px}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:#3D3929;text-decoration:none;display:flex;align-items:center;gap:8px;flex-shrink:0}
+  .nav-logo svg{width:26px;height:26px;flex-shrink:0}
+  .nav-right{display:flex;align-items:center;gap:20px;margin-left:auto}
+  .nav-links{display:flex;gap:20px;list-style:none;align-items:center}
+  .nav-links a{text-decoration:none;color:#5C5540;font-size:14px;font-weight:450;transition:color 0.2s}
+  .nav-links a:hover{color:#8B6F5C}
+  .nav-links a.btn{color:#fff}.nav-links a.btn:hover{color:#fff}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101;background:none;border:none;padding:8px}
+  .burger span{display:block;width:24px;height:2px;background:#3D3929;border-radius:2px;transition:all 0.3s}
+  .burger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+  .burger.active span:nth-child(2){opacity:0}
+  .burger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 28px;border-radius:999px;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;text-decoration:none;cursor:pointer;transition:all 0.25s;border:none;white-space:nowrap}
+  .btn-primary{background:#8B6F5C;color:#fff;box-shadow:0 2px 12px rgba(139,111,92,0.25)}
+  .btn-primary:hover{background:#7A5F4D;transform:translateY(-1px);box-shadow:0 4px 20px rgba(139,111,92,0.35)}
+  .btn-outline{background:transparent;color:#8B6F5C;border:1.5px solid rgba(139,111,92,0.3)}
+  .btn-outline:hover{background:rgba(139,111,92,0.06);border-color:#8B6F5C}
+  .btn-large{padding:16px 36px;font-size:17px;border-radius:999px}
+
+  /* === EVERY SECTION = FULL SCREEN === */
+  section{height:100vh;padding:48px 40px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;scroll-snap-align:start}
+  .section--top{justify-content:flex-start;padding-top:80px}
+  .container{max-width:1200px;margin:0 auto;width:100%}
+  .section-label{display:inline-block;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#A0937D;margin-bottom:14px}
+  .section-title{font-size:clamp(34px,6vw,56px);color:#3D3929;margin-bottom:18px}
+  .section-subtitle{font-size:19px;color:#5C5540;max-width:600px;margin-bottom:36px}
+
+  /* === HERO === */
+  .hero{height:100vh;display:flex;align-items:center;padding-top:64px;padding-bottom:0;background:linear-gradient(135deg,#FDFAF5 0%,#E8D5C4 40%,#C4D7C120 100%)}
+  .hero .container{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .hero-badge{display:inline-block;padding:6px 16px;background:rgba(196,215,193,0.4);border-radius:999px;font-size:13px;font-weight:500;color:#5C7A5E;margin-bottom:20px}
+  .hero h1{font-size:clamp(40px,6vw,62px);color:#3D3929;margin-bottom:24px}
+  .hero h1 em{font-style:italic;color:#8B6F5C}
+  .hero p.subtitle{font-size:22px;color:#5C5540;margin-bottom:18px;max-width:500px;line-height:1.6}
+
+  /* VOICE */
+  .voice-block{display:flex;align-items:center;gap:14px;margin-bottom:28px;padding:18px 24px;background:#fff;border-radius:18px;border:1px solid rgba(160,147,125,0.15);box-shadow:0 2px 12px rgba(139,111,92,0.04);max-width:480px;cursor:pointer;transition:all 0.25s}
+  .voice-block:hover{box-shadow:0 6px 24px rgba(139,111,92,0.10)}
+  .voice-block.playing{background:#FDFAF5;border-color:#C4D7C1;box-shadow:0 4px 20px rgba(196,215,193,0.25)}
+  .voice-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#E8D5C4,#C4D7C1);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+  .voice-info{flex:1}.voice-label{font-size:15px;font-weight:600;color:#3D3929}.voice-hint{font-size:13px;color:#A0937D}
+  .voice-play-btn{width:46px;height:46px;border-radius:50%;background:#8B6F5C;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+  .voice-block.playing .voice-play-btn{background:#5C7A5E;animation:pulse-ring 1.8s infinite}
+  @keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(139,111,92,0.3)}70%{box-shadow:0 0 0 12px rgba(139,111,92,0)}100%{box-shadow:0 0 0 0 rgba(139,111,92,0)}}
+
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-actions .hint{font-size:13px;color:#A0937D}
+  .hero-image{position:relative}
+  .hero-image .photo-frame{width:100%;max-height:80vh;aspect-ratio:3/4;border-radius:28px;overflow:hidden;box-shadow:0 20px 60px rgba(139,111,92,0.12)}
+  .hero-decoration{position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(196,215,193,0.3);z-index:-1}
+  .hero-decoration2{position:absolute;bottom:-30px;left:-30px;width:60px;height:60px;border-radius:18px;background:rgba(232,213,196,0.5);z-index:-1;transform:rotate(15deg)}
+
+  /* === COMPASS === */
+  .compass-section{height:auto;min-height:100vh;padding:56px 40px;background:#fff;border-top:1px solid rgba(160,147,125,0.08);border-bottom:1px solid rgba(160,147,125,0.08)}
+  .compass-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .compass-item{position:relative}
+  .compass-item input{position:absolute;opacity:0;pointer-events:none}
+  .compass-item label{display:flex;align-items:center;gap:12px;padding:30px 26px;background:#FDFAF5;border:1.5px solid rgba(160,147,125,0.15);border-radius:16px;cursor:pointer;transition:all 0.25s;font-size:19px;font-weight:450;color:#5C5540;user-select:none}
+  .compass-item label:hover{border-color:#C4D7C1;transform:translateY(-2px)}
+  .compass-item input:checked+label{background:rgba(196,215,193,0.25);border-color:#C4D7C1;color:#3D3929;font-weight:500;box-shadow:0 4px 16px rgba(196,215,193,0.2)}
+  .compass-item .emoji{font-size:22px;flex-shrink:0}
+  .compass-result{display:none;margin-top:24px;padding:28px;background:linear-gradient(135deg,rgba(196,215,193,0.2),rgba(232,213,196,0.2));border-radius:20px;text-align:center;border:1px solid rgba(160,147,125,0.12)}
+  .compass-result.visible{display:block;animation:fadeIn 0.5s}
+  .compass-result h3{font-size:22px;margin-bottom:12px;color:#3D3929}
+  .compass-result p{color:#5C5540;margin-bottom:20px;font-size:16px}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+  /* === LETTER === */
+  .letter-section{background:linear-gradient(180deg,#FDFAF5,#E8D5C430,#FDFAF5);height:auto;min-height:100vh;padding:64px 24px}
+  .letter-card{background:#fff;border-radius:28px;padding:56px;box-shadow:0 8px 40px rgba(139,111,92,0.06);border:1px solid rgba(160,147,125,0.08);max-width:820px;margin:0 auto}
+  .letter-card textarea{width:100%;height:200px;max-height:260px;padding:24px;border:1.5px solid rgba(160,147,125,0.2);border-radius:16px;font-family:'Inter',sans-serif;font-size:18px;line-height:1.6;resize:none;background:#FDFAF5;color:#3D3929;transition:border-color 0.25s}
+  .letter-card textarea:focus{outline:none;border-color:#C4D7C1;box-shadow:0 0 0 4px rgba(196,215,193,0.15)}
+  .letter-card textarea::placeholder{color:#A0937D}
+  .letter-meta{display:flex;gap:16px;margin-top:16px;flex-wrap:wrap}
+  .letter-meta input{padding:16px 20px;border:1.5px solid rgba(160,147,125,0.2);border-radius:12px;font-family:'Inter',sans-serif;font-size:17px;background:#FDFAF5;color:#3D3929;flex:1;min-width:160px}
+  .letter-meta input:focus{outline:none;border-color:#C4D7C1;box-shadow:0 0 0 4px rgba(196,215,193,0.15)}
+  .letter-submit{display:flex;align-items:center;gap:14px;margin-top:20px;flex-wrap:wrap}
+  .letter-guarantee{font-size:13px;color:#A0937D;display:flex;align-items:center;gap:6px}
+
+  /* === DOUBTS === */
+  .doubts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .doubt-card{background:#fff;border-radius:20px;padding:32px 26px;border:1px solid rgba(160,147,125,0.10);box-shadow:0 2px 12px rgba(139,111,92,0.03);transition:all 0.3s}
+  .doubt-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(139,111,92,0.06)}
+  .doubt-card .fear{font-size:18px;font-weight:600;color:#3D3929;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .doubt-card .fear .icon{font-size:22px}
+  .doubt-card .answer{font-size:15.5px;color:#5C5540;line-height:1.6;padding-left:30px}
+
+  /* === GALLERY === */
+  .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:center}
+  .gallery img{width:100%;height:auto;object-fit:contain;border-radius:16px;transition:transform 0.3s}
+  .gallery img:hover{transform:scale(1.03)}
+
+  /* === GIFT === */
+  .gift-card{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;background:#fff;border-radius:28px;padding:52px 44px;box-shadow:0 4px 24px rgba(139,111,92,0.05);border:1px solid rgba(160,147,125,0.08);max-width:900px;margin:0 auto}
+  .gift-icon{width:90px;height:90px;border-radius:22px;background:linear-gradient(135deg,#E8D5C4,#C4D7C1);display:flex;align-items:center;justify-content:center;font-size:44px}
+  .gift-text h3{font-size:26px;margin-bottom:10px;color:#3D3929}
+  .gift-text p{font-size:16px;color:#5C5540;line-height:1.6}
+
+  /* === MEN === */
+  .men-section{height:auto;min-height:100vh;padding:56px 40px;background:#2D3A2A;color:#D4D1C8}
+  .men-section .section-label{color:#7BAF7E}
+  .men-section .section-title{color:#FDFAF5}
+  .men-section .section-subtitle{color:#B8C0B0}
+  .men-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .men-card{background:rgba(255,255,255,0.05);border-radius:20px;padding:36px 32px;border:1px solid rgba(255,255,255,0.08);transition:all 0.3s}
+  .men-card:hover{transform:translateY(-3px);background:rgba(255,255,255,0.08)}
+  .men-card .num{font-family:'Playfair Display',serif;font-size:36px;color:#7BAF7E;margin-bottom:12px}
+  .men-card h3{font-size:21px;color:#FDFAF5;margin-bottom:10px}
+  .men-card p{font-size:16px;color:#B8C0B0;line-height:1.6}
+
+  /* === PACKAGES === */
+  .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+  .pricing-card{background:#fff;border-radius:24px;padding:48px 36px;border:1px solid rgba(160,147,125,0.12);box-shadow:0 2px 16px rgba(139,111,92,0.04);text-align:center;position:relative;transition:all 0.3s}
+  .pricing-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(139,111,92,0.08)}
+  .pricing-card.featured{border-color:#C4D7C1;box-shadow:0 4px 24px rgba(196,215,193,0.2);background:linear-gradient(180deg,#fff,#FDFAF5)}
+  .pricing-card.featured::before{content:'Выгодно';position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#C4D7C1;color:#3D5A3E;padding:6px 20px;border-radius:999px;font-size:13px;font-weight:600}
+  .pricing-name{font-size:22px;font-weight:600;color:#3D3929;margin-bottom:8px}
+  .pricing-sessions{font-size:16px;color:#A0937D;margin-bottom:20px}
+  .pricing-price{font-family:'Playfair Display',serif;font-size:48px;color:#3D3929;margin-bottom:6px}
+  .pricing-per{font-size:15px;color:#A0937D;margin-bottom:20px}
+  .pricing-features{list-style:none;text-align:left;margin-bottom:24px}
+  .pricing-features li{font-size:17px;color:#5C5540;padding:8px 0;display:flex;align-items:center;gap:10px}
+  .pricing-features li::before{content:'✓';color:#7BAF7E;font-weight:700}
+
+  /* === ABOUT === */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .about-photo{width:100%;max-height:84vh;aspect-ratio:4/5;border-radius:24px;overflow:hidden;box-shadow:0 16px 48px rgba(139,111,92,0.10)}
+  .about-photo img{width:100%;height:100%;object-fit:cover}
+  .about-text h2{margin-bottom:24px}
+  .about-text p{color:#5C5540;margin-bottom:18px;font-size:19px;line-height:1.65}
+  .about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+  .about-highlight{display:flex;align-items:center;gap:10px;font-size:16px;color:#5C5540}
+  .about-highlight .dot{width:8px;height:8px;border-radius:50%;background:#C4D7C1;flex-shrink:0}
+
+  /* === PROCESS === */
+  .process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+  .process-steps::before{content:'';position:absolute;top:45px;left:16%;right:16%;height:1px;background:linear-gradient(90deg,transparent,rgba(160,147,125,0.3),transparent);z-index:0}
+  .step{text-align:center;padding:0 20px;position:relative;z-index:1}
+  .step-number{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,#FDFAF5,#E8D5C4);border:2px solid #C4D7C1;color:#3D3929;font-family:'Playfair Display',serif;font-size:44px;font-weight:700;display:grid;place-items:center;margin:0 auto 28px;line-height:1;box-shadow:0 0 0 8px #FDFAF5}
+  .step h3{font-size:22px;color:#3D3929;margin-bottom:10px}
+  .step p{font-size:16px;color:#6B6553;line-height:1.6;max-width:280px;margin:0 auto}
+
+  /* === TESTIMONIALS === */
+  .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+  .testimonial{background:#fff;border-radius:20px;padding:36px 30px;border:1px solid rgba(160,147,125,0.10);box-shadow:0 2px 12px rgba(139,111,92,0.03)}
+  .testimonial .quote{font-size:17px;color:#5C5540;line-height:1.65;margin-bottom:16px;font-style:italic}
+  .testimonial .quote::before{content:'«';color:#C4D7C1;font-size:28px;font-family:'Playfair Display',serif}
+  .testimonial .quote::after{content:'»';color:#C4D7C1;font-size:28px;font-family:'Playfair Display',serif}
+  .testimonial .author{font-size:16px;font-weight:600;color:#3D3929}
+  .testimonial .tag{font-size:13px;color:#A0937D;margin-top:2px}
+
+  /* === CERTIFICATE === */
+  .cert-card{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch;background:#fff;border-radius:28px;padding:56px;box-shadow:0 8px 40px rgba(139,111,92,0.06);border:1px solid rgba(160,147,125,0.08);max-width:900px;margin:0 auto}
+  .cert-preview{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;background:linear-gradient(135deg,#FDFAF5,#E8D5C420,#C4D7C120);border-radius:20px;border:2px dashed rgba(196,215,193,0.5);min-height:100%}
+  .cert-preview .cert-icon{font-size:60px;margin-bottom:16px}
+  .cert-preview .cert-title{font-family:'Playfair Display',serif;font-size:24px;color:#3D3929;margin-bottom:6px}
+  .cert-preview .cert-sub{font-size:14px;color:#A0937D;line-height:1.5}
+  .cert-info{display:flex;flex-direction:column;justify-content:center}
+  .cert-info h2{font-size:26px;margin-bottom:16px;color:#3D3929}
+  .cert-info p{color:#5C5540;font-size:16px;line-height:1.6}
+
+  /* === CTA === */
+  .cta-section{height:auto;min-height:100vh;padding:64px 24px;background:linear-gradient(135deg,#C4D7C130,#E8D5C440)}
+  .cta-card{text-align:center;background:#fff;border-radius:32px;padding:72px 48px;box-shadow:0 8px 40px rgba(139,111,92,0.06);border:1px solid rgba(160,147,125,0.08);max-width:780px;margin:0 auto}
+  .cta-card h2{margin-bottom:16px}
+  .cta-card p{color:#5C5540;margin-bottom:32px;font-size:18px}
+  .cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center}
+
+  /* === FOOTER === */
+  footer{background:#3D3929;color:#C4BDB0;padding:56px 24px 32px;font-size:14px}
+  footer .container{max-width:960px;margin:0 auto}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px}
+  .footer-brand h3{font-family:'Playfair Display',serif;font-size:22px;color:#FDFAF5;margin-bottom:8px}
+  footer a{color:#C4BDB0;text-decoration:none;transition:color 0.2s}
+  footer a:hover{color:#FDFAF5}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .footer-links h4{color:#FDFAF5;margin-bottom:8px;font-size:13px;text-transform:uppercase;letter-spacing:0.05em}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px}
+
+  /* === FAQ === */
+  .faq-item{border-bottom:1px solid rgba(160,147,125,0.15);padding:18px 0}
+  .faq-item summary{font-weight:500;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:#3D3929}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:'+';font-size:20px;color:#A0937D}
+  .faq-item[open] summary::after{content:'−'}
+  .faq-item .answer{padding-top:8px;font-size:15px;color:#5C5540;line-height:1.6}
+
+  /* === FLOATING === */
+  .float-contacts{position:fixed;right:20px;bottom:40px;z-index:99;display:flex;flex-direction:column;gap:10px}
+  .float-contacts a{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);box-shadow:0 2px 16px rgba(0,0,0,0.06);transition:all 0.25s;text-decoration:none}
+  .float-contacts a:hover{transform:scale(1.1);box-shadow:0 4px 24px rgba(0,0,0,0.15)}
+  .float-contacts svg{width:22px;height:22px}
+  .float-bar{display:none}
+
+  /* === TOAST === */
+  .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:#3D3929;color:#FDFAF5;padding:14px 28px;border-radius:999px;font-size:14px;font-weight:500;z-index:200;transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);box-shadow:0 8px 30px rgba(0,0,0,0.2)}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+
+  /* ===== SHORT SCREENS (<750px height) ===== */
+  @media(max-height:750px){
+    section{padding:40px 24px}
+    .section-title{font-size:clamp(22px,3vw,30px);margin-bottom:10px}
+    .section-subtitle{font-size:14px;margin-bottom:20px}
+    .section-label{font-size:11px;margin-bottom:8px}
+    .hero{padding-top:64px}.hero h1{font-size:clamp(24px,4vw,34px)}
+    .hero p.subtitle{font-size:14px}.hero-badge{font-size:11px}
+    .voice-block{padding:10px 14px;margin-bottom:16px}.voice-avatar{width:36px;height:36px;font-size:16px}.voice-play-btn{width:34px;height:34px;font-size:13px}
+    .btn{padding:10px 20px;font-size:13px}.btn-large{padding:12px 28px;font-size:14px}
+    .hero-image .photo-frame{border-radius:20px}
+    .about-grid{gap:36px}.about-text p{font-size:13px;margin-bottom:6px}.about-highlight{font-size:12px}.about-highlights{margin-top:10px;gap:6px}
+    .about-photo{max-height:55vh}
+    .men-card{padding:16px 14px}.men-card h3{font-size:14px}.men-card p{font-size:12px}.men-card .num{font-size:22px;margin-bottom:4px}
+    .men-grid{gap:10px}
+    .compass-section{padding:40px 24px}.compass-grid{gap:8px}.compass-item label{font-size:13px;padding:12px 14px}.compass-item .emoji{font-size:18px}
+    .pricing-card{padding:22px 20px}.pricing-price{font-size:28px}.pricing-name{font-size:16px}
+    .pricing-features li{font-size:12px;padding:4px 0}
+    .letter-section{padding:40px 24px}.letter-card{padding:28px 32px}.letter-card textarea{height:100px;max-height:130px;font-size:14px}
+    .letter-meta input{padding:10px 14px;font-size:13px}.letter-meta{gap:10px;margin-top:10px}
+    .cert-card{padding:28px 32px;gap:28px}.cert-preview{padding:24px 16px}
+    .step-number{width:72px;height:72px;font-size:28px;margin-bottom:16px}.step h3{font-size:16px}.step p{font-size:13px}
+    .testimonial{padding:16px 14px}.testimonial .quote{font-size:13px;margin-bottom:8px}
+    .gift-card{padding:24px 20px;gap:16px}.gift-icon{width:56px;height:56px;font-size:28px}.gift-text h3{font-size:17px}.gift-text p{font-size:13px}
+    .cta-section{padding:40px 24px}.cta-card{padding:36px 28px}
+    .doubt-card{padding:16px 14px}.doubt-card .fear{font-size:14px}.doubt-card .answer{font-size:13px}
+    .gallery{gap:10px}
+    .faq-item{padding:12px 0}.faq-item summary{font-size:14px}.faq-item .answer{font-size:13px}
+    footer{padding:36px 24px 20px}.footer-grid{gap:28px;margin-bottom:24px}.footer-brand h3{font-size:18px}
+  }
+
+  /* ===== MOBILE (max-width 768px) ===== */
+  @media(max-width:768px){
+    .burger{display:flex}
+    .nav-links{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(253,250,245,0.96);backdrop-filter:blur(12px);flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid rgba(160,147,125,0.15);align-items:stretch}
+    .nav-links.open{display:flex}
+    .nav-links a{font-size:16px;padding:8px 0}
+    .nav-links .btn{text-align:center;padding:12px 20px}
+    body{padding-bottom:60px}
+    section{height:auto;min-height:100vh;padding:48px 20px;overflow-y:visible}
+    .hero{height:auto;min-height:100vh}
+    .hero .container{grid-template-columns:1fr;gap:32px;text-align:center}
+    .hero h1{font-size:clamp(26px,6vw,36px)}
+    .hero p.subtitle{margin:0 auto;font-size:15px}
+    .hero-badge{margin-bottom:14px}
+    .voice-block{margin:0 auto 20px;max-width:100%}
+    .hero-actions{justify-content:center}
+    .hero-image{max-width:240px;margin:0 auto}
+    .hero-image .photo-frame{aspect-ratio:1/1}
+    .about-grid{grid-template-columns:1fr;gap:28px}
+    .about-photo{max-width:240px;margin:0 auto;aspect-ratio:1/1;max-height:50vh}
+    .about-text h2{font-size:26px}.about-text p{font-size:14px}
+    .about-highlights{grid-template-columns:1fr}
+    .process-steps{grid-template-columns:1fr;gap:28px}.process-steps::before{display:none}
+    .step-number{width:72px;height:72px;font-size:30px;margin-bottom:14px;box-shadow:0 0 0 6px #FDFAF5}.step p{max-width:100%}
+    .gift-card{grid-template-columns:1fr;text-align:center;gap:14px}
+    .gift-icon{margin:0 auto}.gift-text h3{font-size:18px}
+    .footer-grid{grid-template-columns:1fr;gap:24px}
+    .testimonials-grid{grid-template-columns:1fr}
+    .doubts-grid{grid-template-columns:1fr}
+    .letter-meta{flex-direction:column}.letter-card{padding:28px 20px}.letter-card textarea{height:110px;font-size:14px}
+    .cert-card{grid-template-columns:1fr;gap:24px;padding:24px 18px}.cert-preview{padding:24px 16px}
+    .pricing-grid{grid-template-columns:1fr;max-width:380px;margin:0 auto}.pricing-card.featured{order:-1}
+    .men-grid{grid-template-columns:1fr;gap:10px}
+    .men-card{padding:18px 16px}.men-card h3{font-size:15px}.men-card p{font-size:13px}
+    .compass-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+    .compass-item label{font-size:13px;padding:12px 14px}.compass-item .emoji{font-size:18px}
+    .section-title{font-size:clamp(24px,5vw,30px)}.section-subtitle{font-size:15px;max-width:100%}
+    .gallery{grid-template-columns:repeat(3,1fr);gap:8px}
+    .float-contacts{display:none}
+    .float-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:99;background:#fff;border-top:1px solid rgba(160,147,125,0.15);padding:8px 12px;gap:8px;justify-content:center}
+    .float-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px;border-radius:12px;text-decoration:none;font-size:13px;font-weight:500;color:#3D3929;background:#FDFAF5}
+    .float-bar .btn-tg{background:#2AABEE;color:#fff}
+    .float-bar .btn-max{background:#4DA8E0;color:#fff}
+    .float-bar svg{width:18px;height:18px}
+  }
+
+  /* ===== SMALL MOBILE (max-width 480px) ===== */
+  @media(max-width:480px){
+    section{padding:36px 14px}
+    .hero{padding-top:80px}.hero h1{font-size:clamp(22px,6vw,30px)}.hero p.subtitle{font-size:14px}
+    .hero-actions{flex-direction:column;width:100%}.hero-actions .btn{width:100%}
+    .hero-image{max-width:180px}
+    .cta-card{padding:28px 18px}
+    .cta-buttons{flex-direction:column;width:100%}.cta-buttons .btn{width:100%}
+    .compass-grid{grid-template-columns:1fr 1fr;gap:4px}
+    .compass-item label{font-size:11px;padding:10px 12px;gap:4px}.compass-item .emoji{font-size:15px}
+    .men-section .section-title{font-size:24px}
+    .gallery{grid-template-columns:repeat(2,1fr);gap:6px}
+    .faq-item summary{font-size:13px}.faq-item .answer{font-size:12px}
+    footer{padding:28px 14px 16px}.footer-bottom{flex-direction:column;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false"><img src="ksusha-logo.png" alt="" style="width:36px;height:36px;object-fit:contain">Ксения Журавлёва</a>
+    <div class="nav-right">
+    <button class="burger" id="burger" onclick="document.getElementById('navMenu').classList.toggle('open');this.classList.toggle('active')" aria-label="Меню"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navMenu">
+      <li><a href="#about">Обо мне</a></li>
+      <li><a href="https://max.ru/u/f9LHodD0cOJnYUckjnjMIWRd4BRZjpHC8x4KgVX70Wb7jH5Mb-KHRMtN0Is" class="btn btn-primary" style="padding:10px 24px;font-size:14px;font-weight:600;letter-spacing:0.02em;color:#fff">Записаться</a></li>
+    </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-text">
+      <div class="hero-badge">Психолог · Семейный терапевт</div>
+      <h1>Иногда кажется, что вы говорите на&nbsp;разных языках.<br>Давайте найдём <em>переводчика</em>.</h1>
+      <p class="subtitle">Бережная поддержка и реальные изменения.<br>Как журавли возвращаются домой — так и мы <em>возвращаемся к себе</em>.</p>
+      <div class="voice-block" id="voiceBlock" onclick="toggleVoice()">
+        <div class="voice-avatar">🎧</div><div class="voice-info"><div class="voice-label">Привет! Это Ксения</div><div class="voice-hint" id="voiceHint"></div></div>
+        <div class="voice-play-btn" id="voiceBtn">▶</div>
+      </div>
+      <div class="hero-actions">
+        <a href="https://max.ru/u/f9LHodD0cOJnYUckjnjMIWRd4BRZjpHC8x4KgVX70Wb7jH5Mb-KHRMtN0Is" target="_blank" class="btn btn-primary btn-large">Записаться</a>
+        <span class="hint">Предоплата 50% · отмена за 6 часов</span>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="photo-frame"><img src="ksusha-hero.jpg" alt="Ксения Журавлёва" style="width:100%;height:100%;object-fit:cover"></div>
+      <div class="hero-decoration"></div><div class="hero-decoration2"></div>
+    </div>
+  </div>
+</section>
+
+<section class="compass-section" id="compass">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Не знаете с чего начать?</div>
+    <h2 class="section-title" style="text-align:center">Отметьте что отзывается</h2>
+    <p class="section-subtitle" style="text-align:center;margin-left:auto;margin-right:auto">Это не тест. Просто способ понять, по адресу ли вы.</p>
+    <div class="compass-grid" id="compassGrid">
+      <div class="compass-item"><input type="checkbox" id="c1" onchange="updateCompass()"><label for="c1"><span class="emoji">💔</span> Трудности в отношениях</label></div>
+      <div class="compass-item"><input type="checkbox" id="c2" onchange="updateCompass()"><label for="c2"><span class="emoji">😰</span> Тревога, паника, стресс</label></div>
+      <div class="compass-item"><input type="checkbox" id="c3" onchange="updateCompass()"><label for="c3"><span class="emoji">🪞</span> Самооценка, неуверенность</label></div>
+      <div class="compass-item"><input type="checkbox" id="c4" onchange="updateCompass()"><label for="c4"><span class="emoji">🚧</span> Личные границы</label></div>
+      <div class="compass-item"><input type="checkbox" id="c5" onchange="updateCompass()"><label for="c5"><span class="emoji">🔥</span> Выгорание, апатия</label></div>
+      <div class="compass-item"><input type="checkbox" id="c6" onchange="updateCompass()"><label for="c6"><span class="emoji">🔗</span> Эмоциональная зависимость</label></div>
+      <div class="compass-item"><input type="checkbox" id="c7" onchange="updateCompass()"><label for="c7"><span class="emoji">💑</span> Конфликты в паре</label></div>
+      <div class="compass-item"><input type="checkbox" id="c8" onchange="updateCompass()"><label for="c8"><span class="emoji">🌙</span> Сексуальность и близость</label></div>
+    </div>
+    <div class="compass-result" id="compassResult">
+      <h3 id="compassTitle">Я могу помочь ✨</h3>
+      <p id="compassText">Выберите что отзывается выше — и здесь появится мой ответ.</p>
+      <a href="https://max.ru/u/f9LHodD0cOJnYUckjnjMIWRd4BRZjpHC8x4KgVX70Wb7jH5Mb-KHRMtN0Is" class="btn btn-primary">Хочу обсудить это лично</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="background:#FDFAF5">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo"><img src="ksusha-about.jpg" alt="Ксения Журавлёва"></div>
+      <div class="about-text">
+        <div class="section-label">Обо мне</div>
+        <h2 class="section-title">Ксения Журавлёва<br><span style="font-size:0.5em;font-weight:400;color:#A0937D">психолог, семейный терапевт</span></h2>
+        <p>Журавли не летают в одиночку — и люди не должны. Мой путь в психологию начался с личного опыта: отношений, в которых было много контроля, манипуляций и нарушенных границ. Я стала разбираться — и это стало профессией. Сегодня я помогаю людям возвращаться к себе.</p>
+        <p>Я не оцениваю, не осуждаю и не спрашиваю «почему вы это терпели». Вместе мы будем бережно разбираться в вашей ситуации и искать опору, которая поможет принимать решения, подходящие именно вам. Работаю в мультимодальном подходе: КПТ, системная семейная терапия, EFT, нарративная терапия, ACT.</p>
+        <div class="about-highlights">
+          <div class="about-highlight"><span class="dot"></span> 5+ лет практики</div>
+          <div class="about-highlight"><span class="dot"></span> ТГУ, психолог-педагог, 2005</div>
+          <div class="about-highlight"><span class="dot"></span> Институт Семейной Психологии</div>
+          <div class="about-highlight"><span class="dot"></span> Семейный психолог + секс. терапия</div>
+          <div class="about-highlight"><span class="dot"></span> Индивидуально и пары</div>
+          <div class="about-highlight"><span class="dot"></span> Онлайн</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:24px 0">
+  <div style="width:92vw;margin:0 auto">
+    <div class="gallery">
+      <img src="ksusha-gal-1.jpg" alt="Ксения Журавлёва" loading="lazy">
+      <img src="ksusha-gal-3.jpg" alt="Ксения Журавлёва" loading="lazy">
+      <img src="ksusha-gal-2.jpg" alt="Ксения Журавлёва" loading="lazy">
+      <img src="ksusha-gal-4.jpg" alt="Ксения Журавлёва" loading="lazy">
+      <img src="ksusha-gal-5.jpg" alt="Ксения Журавлёва" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label" style="text-align:center">Честно о главном</div>
+    <h2 class="section-title" style="text-align:center">Сомневаетесь? Это нормально</h2>
+    <p class="section-subtitle" style="text-align:center;margin-left:auto;margin-right:auto">Почти каждый, кто приходит к психологу, проходит через эти мысли.</p>
+    <div class="doubts-grid">
+      <div class="doubt-card"><div class="fear"><span class="icon">😟</span> «А вдруг меня осудят?»</div><div class="answer">Я не оцениваю и не ставлю диагнозов. Вы можете говорить всё как есть — я слушаю без осуждения. Это моя работа и моё убеждение.</div></div>
+      <div class="doubt-card"><div class="fear"><span class="icon">🤔</span> «Я и сам(а) справлюсь»</div><div class="answer">Конечно. Но с психологом — быстрее и глубже. Как с тренером: можно самому, но с профессионалом не потратите годы на «велосипед».</div></div>
+      <div class="doubt-card"><div class="fear"><span class="icon">😬</span> «А если не поможет?»</div><div class="answer">Первая встреча — 2 000 ₽ с предоплатой 50%. Вы ничего не теряете. Просто познакомимся и вы почувствуете, ваше это или нет.</div></div>
+      <div class="doubt-card"><div class="fear"><span class="icon">🙈</span> «Стыдно идти к психологу»</div><div class="answer">Это не слабость. Это ответственное решение взрослого человека. Самые сильные люди — те, кто умеют попросить о помощи.</div></div>
+      <div class="doubt-card"><div class="fear"><span class="icon">💸</span> «Это дорого»</div><div class="answer">Терапия — инвестиция в качество жизни. Сколько стоят годы в несчастливых отношениях или в постоянной тревоге?</div></div>
+      <div class="doubt-card"><div class="fear"><span class="icon">😶</span> «Я не знаю что говорить»</div><div class="answer">Можно просто прийти и сказать: «Я волнуюсь и не знаю с чего начать». Это нормально — я помогу. Большинство моих клиентов начинали именно так.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="men-section" id="men">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Мужской взгляд</div>
+    <h2 class="section-title" style="text-align:center">Не «слабость». Ответственность.</h2>
+    <p class="section-subtitle" style="text-align:center;margin-left:auto;margin-right:auto">Мужчины реже идут к психологу. А зря. Вот что я об этом думаю.</p>
+    <div class="men-grid">
+      <div class="men-card"><div class="num">01</div><h3>Ты не «слабак»</h3><p>Слабый — тот кто годами живёт в аду и ничего не меняет. Прийти к психологу = взять ответственность за свою жизнь. Это по-мужски.</p></div>
+      <div class="men-card"><div class="num">02</div><h3>Без «соплей и обнимашек»</h3><p>Я не буду сюсюкать. Разговор прямой, по делу. Разберём ситуацию честно и без иллюзий.</p></div>
+      <div class="men-card"><div class="num">03</div><h3>Про деньги и карьеру</h3><p>Выгорание, потеря драйва, конфликты в бизнесе — это тоже сюда. Я понимаю мужские темы и говорю на твоём языке.</p></div>
+      <div class="men-card"><div class="num">04</div><h3>Про отношения — без истерик</h3><p>«Она меня не слышит», «мы как соседи». Журавли выбирают пару на всю жизнь — люди тоже могут. Разберёмся.</p></div>
+      <div class="men-card"><div class="num">05</div><h3>Конфиденциально. Жёстко.</h3><p>Никто не узнает что ты был у психолога. Ни жена, ни партнёры, ни друзья. Это наше дело.</p></div>
+      <div class="men-card"><div class="num">06</div><h3>Первая встреча — проверим</h3><p>Просто поговорим. Не понравится — разошлись. Понравится — работаем. Никаких «давайте обнимемся».</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:linear-gradient(180deg,#FDFAF5,#fff,#FDFAF5)">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Как проходит работа</div>
+    <h2 class="section-title" style="text-align:center">Три шага к изменениям</h2>
+    <p class="section-subtitle" style="text-align:center;margin-left:auto;margin-right:auto">Путь от «надо что-то менять» до реальных перемен — проще, чем кажется</p>
+    <div class="process-steps">
+      <div class="step"><div class="step-number">1</div><h3>Знакомство</h3><p>Первая встреча — 60 минут. Мы познакомимся, обсудим что привело, уточним запрос. Вы почувствуете больше ясности и поймёте, хотите ли продолжать.</p></div>
+      <div class="step"><div class="step-number">2</div><h3>Работа</h3><p>Регулярные встречи 60–90 минут. Исследуем, распутываем, пробуем новое. Вы сами определяете чем готовы поделиться — я не подгоняю.</p></div>
+      <div class="step"><div class="step-number">3</div><h3>Расправляете крылья</h3><p>Вы начинаете иначе видеть ситуацию, иначе реагировать и иначе строить отношения. Новые навыки остаются с вами навсегда — как умение летать.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Стоимость</div>
+    <h2 class="section-title" style="text-align:center">Выберите свой темп</h2>
+    <p class="section-subtitle" style="text-align:center;margin-left:auto;margin-right:auto">Онлайн. Предоплата 50% за 24 часа. Отмена/перенос — за 6 часов.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name">Индивидуальная</div><div class="pricing-sessions">1 встреча · 60 мин</div><div class="pricing-price">2 000 ₽</div><div class="pricing-per">разовая консультация</div>
+        <ul class="pricing-features"><li>Разбираем конкретный запрос</li><li>Бережная поддержка</li><li>Практические инструменты</li></ul>
+        <a href="https://max.ru/u/f9LHodD0cOJnYUckjnjMIWRd4BRZjpHC8x4KgVX70Wb7jH5Mb-KHRMtN0Is" target="_blank" class="btn btn-primary" style="width:100%">Записаться</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">Парная / семейная</div><div class="pricing-sessions">1 встреча · 90 мин</div><div class="pricing-price">3 000 ₽</div><div class="pricing-per">разовая консультация</div>
+        <ul class="pricing-features"><li>Работа с парой или семьёй</li><li>Учимся слышать друг друга</li><li>Конкретные техники для дома</li></ul>
+        <a href="https://max.ru/u/f9LHodD0cOJnYUckjnjMIWRd4BRZjpHC8x4KgVX70Wb7jH5Mb-KHRMtN0Is" target="_blank" class="btn btn-outline" style="width:100%">Записаться</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-name">Абонемент</div><div class="pricing-sessions">4 встречи</div><div class="pricing-price">7 000 ₽</div><div class="pricing-per">индивидуальные · 60 мин</div>
+        <ul class="pricing-features"><li>4 недели регулярной работы</li><li>Задания между встречами</li><li>Поддержка в мессенджере</li></ul>
+        <a href="https://max.ru/u/f9LHodD0cOJnYUckjnjMIWRd4BRZjpHC8x4KgVX70Wb7jH5Mb-KHRMtN0Is" target="_blank" class="btn btn-outline" style="width:100%">Записаться</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:14px;font-size:14px;color:#A0937D">Также есть абонемент на парные: 4 встречи по 90 мин — 11 000 ₽</p>
+  </div>
+</section>
+
+<section style="background:linear-gradient(180deg,#FDFAF5,#E8D5C420,#FDFAF5)">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Подарочный сертификат</div>
+    <h2 class="section-title" style="text-align:center">Подарите заботу</h2>
+    <p class="section-subtitle" style="text-align:center;margin-left:auto;margin-right:auto">Жене, мужу, маме, подруге — иногда лучший подарок это возможность быть услышанным.</p>
+    <div class="cert-card">
+      <div class="cert-preview" style="cursor:pointer" onclick="window.open('ksusha-sertifikat.html','_blank')">
+        <div class="cert-icon">🎁</div><div class="cert-title">Сертификат на консультацию</div>
+        <div class="cert-sub">Ксения Журавлёва — психолог, семейный терапевт<br><span style="font-size:11px;color:#A0937D">нажмите чтобы посмотреть</span></div>
+      </div>
+      <div class="cert-info">
+        <h2>Как это работает</h2>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#5C5540"><span style="width:24px;height:24px;border-radius:50%;background:#C4D7C1;color:#3D5A3E;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0">1</span> Пишете Ксении</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#5C5540"><span style="width:24px;height:24px;border-radius:50%;background:#C4D7C1;color:#3D5A3E;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0">2</span> Выбираете номинал: 2 000 или 3 000 ₽</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#5C5540"><span style="width:24px;height:24px;border-radius:50%;background:#C4D7C1;color:#3D5A3E;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0">3</span> Оплачиваете — получаете сертификат на почту</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#5C5540"><span style="width:24px;height:24px;border-radius:50%;background:#C4D7C1;color:#3D5A3E;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0">4</span> Дарите — получатель записывается</div>
+        </div>
+        <p style="font-size:13px;color:#A0937D">Действует 6 месяцев</p>
+        <a href="https://max.ru/u/f9LHodD0cOJnYUckjnjMIWRd4BRZjpHC8x4KgVX70Wb7jH5Mb-KHRMtN0Is" class="btn btn-primary" style="margin-top:14px">Заказать сертификат 🎁</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="gift-card">
+      <div class="gift-icon">📔</div>
+      <div class="gift-text"><h3>Дневник чувств — скачайте бесплатно</h3><p>Простой инструмент чтобы начать понимать себя лучше. 7 страниц, 5 минут в день. Без регистрации, без подписки.</p></div>
+      <div class="gift-download"><a href="#" class="btn btn-outline" onclick="downloadDiary();return false" style="gap:8px">📥 Скачать PDF</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label" style="text-align:center">Отзывы</div>
+    <h2 class="section-title" style="text-align:center">Что говорят клиенты</h2>
+    <p class="section-subtitle" style="text-align:center;margin-left:auto;margin-right:auto">Анонимно, с разрешения. Реальные истории реальных людей.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial"><p class="quote">Работа с Ксенией стала первым опытом работы с психологом онлайн. На моё удивление это оказалось намного комфортнее и удобнее даже, чем в кабинете. После часа работы с тревогой стало очень легко и свободно.</p><div class="author">Наталья С.</div><div class="tag">Индивидуальная терапия</div></div>
+      <div class="testimonial"><p class="quote">Мы долго сомневались, идти ли к психологу. Чувствуется, как вы искренне помогаете разобраться, без осуждений. Мы добились хороших результатов, стали дружнее, поняли как взаимодействовать без конфликтов.</p><div class="author">Михаил и Оксана В.</div><div class="tag">Семейная терапия</div></div>
+      <div class="testimonial"><p class="quote">Хочу сказать спасибо Ксении! Помогла разгрести «хлам» на моём «чердаке». Отличный специалист. Бывали моменты, когда моя точка зрения на ситуацию была развёрнута так, как я сам не мог увидеть.</p><div class="author">Антон Б.</div><div class="tag">Индивидуальная терапия</div></div>
+      <div class="testimonial"><p class="quote">Вы располагаете клиента к откровению, Вам легко доверить самое сокровенное. Ваши объяснения моей боли были точными и находили отклик в душе. Практика была душевной и терапевтичной.</p><div class="author">Гульнара</div><div class="tag">Индивидуальная терапия</div></div>
+      <div class="testimonial"><p class="quote">Консультация мне помогла найти нужное направление, в котором надо двигаться! Я нашёл своего психолога!</p><div class="author">Александр П.</div><div class="tag">Индивидуальная терапия</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contacts">
+  <div class="container">
+    <div class="cta-card">
+      <div class="section-label">Готовы начать?</div>
+      <h2 class="section-title">Давайте познакомимся</h2>
+      <p>Предоплата 50% · отмена за 6 часов.<br>Выберите удобное время — и начнём.</p>
+      <div class="cta-buttons">
+        <a href="https://t.me/zhuravleva_mind" class="btn btn-primary btn-large" target="_blank"><svg viewBox="0 0 24 24" style="width:20px;height:20px;margin-right:8px"><circle cx="12" cy="12" r="12" fill="#fff" opacity=".2"/><path d="M5.5 11.2l10.8-4.5c.5-.2 1 .1.8.7l-2 9.5c-.1.5-.5.6-1 .4l-2.8-2-1.3 1.3c-.2.1-.3.2-.6.2l.2-2.8 5.1-4.6c.2-.2 0-.3-.3-.1l-6.3 3.9-2.7-.9c-.6-.2-.6-.6.1-.9z" fill="#fff"/></svg>Telegram</a>
+        <a href="https://max.ru/u/f9LHodD0cOJnYUckjnjMIWRd4BRZjpHC8x4KgVX70Wb7jH5Mb-KHRMtN0Is" target="_blank" class="btn btn-outline btn-large"><img src="max-logo.png" alt="" style="width:20px;height:20px;margin-right:8px;border-radius:3px;flex-shrink:0">MAX</a>
+        <a href="#" onclick="copyPhone();return false" class="btn btn-outline btn-large"><svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px;margin-right:8px"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>Номер</a>
+      </div>
+      <p style="margin-top:14px;font-size:14px;color:#A0937D">Или на почту: <a href="mailto:hello@zhuravleva.ru" style="color:#8B6F5C">hello@zhuravleva.ru</a></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container" style="max-width:720px">
+    <div class="section-label" style="text-align:center">Частые вопросы</div>
+    <h2 class="section-title" style="text-align:center;margin-bottom:32px">FAQ</h2>
+    <details class="faq-item"><summary>Нужно ли заранее точно сформулировать запрос?</summary><div class="answer">Нет. Достаточно рассказать, что сейчас вас беспокоит. Вместе мы уточним запрос и определим, с чего лучше начать.</div></details>
+    <details class="faq-item"><summary>Что будет на первой встрече?</summary><div class="answer">Мы познакомимся, обсудим вашу ситуацию, ожидания и возможные цели работы. Я расскажу о формате и отвечу на ваши вопросы.</div></details>
+    <details class="faq-item"><summary>Нужно ли рассказывать всё сразу?</summary><div class="answer">Нет. Вы сами определяете, чем готовы поделиться сейчас. Важно, чтобы вы чувствовали себя достаточно безопасно.</div></details>
+    <details class="faq-item"><summary>Как часто нужно встречаться?</summary><div class="answer">Частота встреч зависит от вашего запроса, состояния и возможностей. Обычно этот вопрос мы обсуждаем после первой консультации.</div></details>
+    <details class="faq-item"><summary>Всё ли останется конфиденциальным?</summary><div class="answer">Да, конфиденциальность — важная часть психологической работы. Исключения — только ситуации, предусмотренные законом.</div></details>
+    <details class="faq-item"><summary>Можно ли не продолжать после первой встречи?</summary><div class="answer">Да. Первая консультация — возможность познакомиться и понять, насколько вам подходит специалист и формат работы.</div></details>
+    <details class="faq-item"><summary>Что если я буду волноваться или не смогу начать?</summary><div class="answer">Это нормально. Можно прямо сказать: «Я волнуюсь и не знаю, с чего начать». Я помогу выстроить разговор.</div></details>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>Ксения Журавлёва</h3><p>Психолог и семейный терапевт. Помогаю людям и парам находить общий язык — с собой и друг с другом.<br><span style="font-size:0.9em;opacity:0.7">Журавли выбирают пару на всю жизнь. Люди тоже могут.</span></p></div>
+      <div><ul class="footer-links"><h4>Страницы</h4><li><a href="#compass">Что у вас?</a></li><li><a href="#about">Обо мне</a></li><li><a href="#contacts">Контакты</a></li></ul></div>
+      <div><ul class="footer-links"><h4>Связь</h4><li><a href="https://t.me/zhuravleva_mind">Telegram</a></li><li><a href="https://max.ru/u/f9LHodD0cOJnYUckjnjMIWRd4BRZjpHC8x4KgVX70Wb7jH5Mb-KHRMtN0Is" target="_blank">MAX</a></li><li><a href="mailto:hello@zhuravleva.ru">hello@zhuravleva.ru</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© Ксения Журавлёва, 2026</span><span>Все права защищены</span></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- FLOATING CONTACTS -->
+<div class="float-contacts">
+  <a href="https://t.me/zhuravleva_mind" target="_blank" title="Telegram"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#2AABEE"/><path d="M5.5 11.2l10.8-4.5c.5-.2 1 .1.8.7l-2 9.5c-.1.5-.5.6-1 .4l-2.8-2-1.3 1.3c-.2.1-.3.2-.6.2l.2-2.8 5.1-4.6c.2-.2 0-.3-.3-.1l-6.3 3.9-2.7-.9c-.6-.2-.6-.6.1-.9z" fill="#fff"/></svg></a>
+  <a href="https://max.ru/u/f9LHodD0cOJnYUckjnjMIWRd4BRZjpHC8x4KgVX70Wb7jH5Mb-KHRMtN0Is" target="_blank" title="MAX"><img src="max-logo.png" alt="MAX" style="width:24px;height:24px;border-radius:5px"></a>
+  <a href="#" onclick="copyPhone();return false" title="Копировать номер"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#8B6F5C"/><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z" fill="#fff"/></svg></a>
+</div>
+<div class="float-bar">
+  <a href="https://t.me/zhuravleva_mind" target="_blank" class="btn-tg"><svg viewBox="0 0 24 24"><path d="M5.5 11.2l10.8-4.5c.5-.2 1 .1.8.7l-2 9.5c-.1.5-.5.6-1 .4l-2.8-2-1.3 1.3c-.2.1-.3.2-.6.2l.2-2.8 5.1-4.6c.2-.2 0-.3-.3-.1l-6.3 3.9-2.7-.9c-.6-.2-.6-.6.1-.9z" fill="#fff"/></svg>Telegram</a>
+  <a href="https://max.ru/u/f9LHodD0cOJnYUckjnjMIWRd4BRZjpHC8x4KgVX70Wb7jH5Mb-KHRMtN0Is" target="_blank" class="btn-max"><img src="max-logo.png" alt="" style="width:18px;height:18px;border-radius:3px">MAX</a>
+  <a href="#" onclick="copyPhone();return false"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg></a>
+</div>
+
+<script>
+  let voiceAudio=null,voicePlaying=false;
+  function toggleVoice(){const b=document.getElementById('voiceBlock'),btn=document.getElementById('voiceBtn');if(!voicePlaying){if(!voiceAudio){voiceAudio=new Audio('ksusha-voice.mp3');voiceAudio.onended=()=>{b.classList.remove('playing');btn.textContent='▶';voicePlaying=false}}voiceAudio.play();b.classList.add('playing');btn.textContent='⏸';voicePlaying=true}else{voiceAudio.pause();voiceAudio.currentTime=0;b.classList.remove('playing');btn.textContent='▶';voicePlaying=false}}
+
+  function updateCompass(){const ch=document.querySelectorAll('.compass-item input:checked'),r=document.getElementById('compassResult'),t=document.getElementById('compassTitle'),x=document.getElementById('compassText');if(ch.length===0){r.classList.remove('visible');return}r.classList.add('visible');if(ch.length>=3){t.textContent='Похоже, вам есть о чём поговорить ✨';x.textContent='Вы отметили несколько областей — часто одно связано с другим. Я работаю и с индивидуальными запросами, и с парами. Давайте начнём с первой встречи.'}else if(ch.length===1){const l={'c1':'трудностями в отношениях','c2':'тревогой','c3':'самооценкой','c4':'личными границами','c5':'выгоранием','c6':'эмоциональной зависимостью','c7':'конфликтами в паре','c8':'сексуальностью и близостью'};t.textContent='Я работаю с этим 🙌';x.textContent='Вы отметили запрос связанный с '+l[ch[0].id]+'. Это одно из моих основных направлений. Давайте обсудим вашу ситуацию лично.'}else{t.textContent='Я могу помочь с этим 💛';x.textContent='Вы отметили несколько важных тем. В моей практике они часто пересекаются. Давайте разбираться вместе.'}}
+
+  const PHONE='+7 909 738 87 30';function copyPhone(){navigator.clipboard.writeText(PHONE.replace(/\s/g,''));showToast('Номер скопирован: '+PHONE)}function downloadDiary(){window.open('ksusha-dnevnik-chuvstv.html','_blank')}
+  function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._timeout);t._timeout=setTimeout(()=>t.classList.remove('show'),3000)}
+  document.querySelectorAll('#navMenu a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('navMenu').classList.remove('open');document.getElementById('burger').classList.remove('active')})});
+</script>
+</body>
+</html>
