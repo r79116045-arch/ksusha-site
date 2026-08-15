@@ -108,7 +108,7 @@
 
   /* === DOUBTS === */
   .doubts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .doubt-card{background:#fff;border-radius:20px;padding:8px 32px 36px;min-height:240px;border:1px solid rgba(160,147,125,0.10);box-shadow:0 2px 12px rgba(139,111,92,0.03);transition:all 0.3s}
+  .doubt-card{background:#fff;border-radius:20px;padding:8px 32px 36px;height:240px;overflow:hidden;border:1px solid rgba(160,147,125,0.10);box-shadow:0 2px 12px rgba(139,111,92,0.03);transition:all 0.3s}
   .doubt-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(139,111,92,0.06)}
   .doubt-card .fear{font-size:21px;font-weight:600;color:#3D3929;margin-bottom:10px;display:flex;align-items:center;gap:8px}
   .doubt-card .fear .icon{font-size:26px}
@@ -131,7 +131,7 @@
   .men-section .section-title{color:#FDFAF5}
   .men-section .section-subtitle{color:#B8C0B0}
   .men-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .men-card{background:rgba(255,255,255,0.05);border-radius:20px;padding:8px 32px 36px;min-height:240px;border:1px solid rgba(255,255,255,0.08);transition:all 0.3s}
+  .men-card{background:rgba(255,255,255,0.05);border-radius:20px;padding:8px 32px 36px;height:240px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);transition:all 0.3s}
   .men-card:hover{transform:translateY(-3px);background:rgba(255,255,255,0.08)}
   .men-card .num{font-family:'Playfair Display',serif;font-size:36px;color:#7BAF7E;margin-bottom:12px}
   .men-card h3{font-size:21px;color:#FDFAF5;margin-bottom:10px}
@@ -289,7 +289,8 @@
     .cert-card{grid-template-columns:1fr;gap:24px;padding:24px 18px}.cert-preview{padding:24px 16px}
     .pricing-grid{grid-template-columns:1fr;max-width:380px;margin:0 auto}.pricing-card.featured{order:-1}
     .men-grid{grid-template-columns:1fr;gap:10px}
-    .men-card{padding:18px 16px}.men-card h3{font-size:15px}.men-card p{font-size:13px}
+    .men-card{padding:18px 16px;height:auto}.men-card h3{font-size:15px}.men-card p{font-size:13px}
+    .doubt-card{height:auto}
     .compass-grid{grid-template-columns:repeat(2,1fr);gap:8px}
     .compass-item label{font-size:13px;padding:12px 14px}.compass-item .emoji{font-size:18px}
     .section-title{font-size:clamp(24px,5vw,30px)}.section-subtitle{font-size:15px;max-width:100%}
