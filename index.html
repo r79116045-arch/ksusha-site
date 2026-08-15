@@ -57,6 +57,7 @@
   /* === HERO === */
   .hero{height:100vh;display:flex;align-items:center;padding-top:64px;padding-bottom:0;background:linear-gradient(135deg,#FDFAF5 0%,#E8D5C4 40%,#C4D7C120 100%)}
   .hero .container{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .hero-bottom{grid-column:1}
   .hero-badge{display:inline-block;position:relative;top:-28px;padding:6px 16px;background:rgba(196,215,193,0.4);border-radius:999px;font-size:13px;font-weight:500;color:#5C7A5E;margin-bottom:20px}
   .hero h1{font-size:clamp(40px,6vw,62px);color:#3D3929;margin-bottom:24px}
   .hero h1 em{font-style:italic;color:#8B6F5C}
@@ -342,6 +343,12 @@
       <div class="hero-badge">Психолог · Семейный терапевт</div>
       <h1>Иногда кажется, что вы говорите на&nbsp;разных языках.<br>Давайте найдём <em>переводчика</em>.</h1>
       <p class="subtitle">Бережная поддержка и реальные изменения.<br>Как журавли возвращаются домой — так и мы <em>возвращаемся к себе</em>.</p>
+    </div>
+    <div class="hero-image">
+      <div class="photo-frame"><img src="ksusha-hero.jpg" alt="Ксения Журавлёва" style="width:100%;height:100%;object-fit:cover;object-position:top"></div>
+      <div class="hero-decoration"></div><div class="hero-decoration2"></div>
+    </div>
+    <div class="hero-bottom">
       <div class="voice-block" id="voiceBlock" onclick="toggleVoice()">
         <div class="voice-avatar">🎧</div><div class="voice-info"><div class="voice-label">Привет! Это Ксения</div><div class="voice-hint" id="voiceHint"></div></div>
         <div class="voice-play-btn" id="voiceBtn">▶</div>
@@ -350,10 +357,6 @@
         <a href="https://max.ru/u/f9LHodD0cOJnYUckjnjMIWRd4BRZjpHC8x4KgVX70Wb7jH5Mb-KHRMtN0Is" target="_blank" class="btn btn-primary btn-large">Записаться</a>
         <span class="hint">Предоплата 50% · отмена за 6 часов</span>
       </div>
-    </div>
-    <div class="hero-image">
-      <div class="photo-frame"><img src="ksusha-hero.jpg" alt="Ксения Журавлёва" style="width:100%;height:100%;object-fit:cover;object-position:top"></div>
-      <div class="hero-decoration"></div><div class="hero-decoration2"></div>
     </div>
   </div>
 </section>
