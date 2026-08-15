@@ -296,13 +296,14 @@
     .compass-item label{font-size:13px;padding:12px 14px}.compass-item .emoji{font-size:18px}
     .section-title{font-size:clamp(24px,5vw,30px)}.section-subtitle{font-size:15px;max-width:100%}
     .gallery{grid-template-columns:repeat(3,1fr);gap:8px}
-    .float-contacts{display:none}
-    .float-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:99;background:transparent;padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px;justify-content:center}
-    .float-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 8px;background:transparent;text-decoration:none;font-size:14px;font-weight:600;color:#3D3929}
+    .float-contacts{display:flex;right:16px;bottom:24px}
+    .float-bar{display:none}
+    .float-bar a{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.9);box-shadow:0 2px 12px rgba(61,57,41,0.15);text-decoration:none;color:#3D3929}
     .float-bar .btn-tg{color:#2AABEE}
     .float-bar .btn-max{color:#3D7BD9}
     .float-bar .btn-phone{color:#8B6F5C}
-    .float-bar svg{width:18px;height:18px;flex-shrink:0}
+    .float-bar svg{width:20px;height:20px;flex-shrink:0}
+    .float-bar img{width:22px;height:22px;border-radius:4px}
   }
 
   /* ===== SMALL MOBILE (max-width 480px) ===== */
@@ -590,9 +591,9 @@
   <a href="#" onclick="copyPhone();return false" title="Копировать номер"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#8B6F5C"/><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z" fill="#fff"/></svg></a>
 </div>
 <div class="float-bar">
-  <a href="https://t.me/zhuravleva_mind" target="_blank" class="btn-tg"><svg viewBox="0 0 24 24"><path d="M5.5 11.2l10.8-4.5c.5-.2 1 .1.8.7l-2 9.5c-.1.5-.5.6-1 .4l-2.8-2-1.3 1.3c-.2.1-.3.2-.6.2l.2-2.8 5.1-4.6c.2-.2 0-.3-.3-.1l-6.3 3.9-2.7-.9c-.6-.2-.6-.6.1-.9z" fill="currentColor"/></svg>Telegram</a>
-  <a href="https://max.ru/u/f9LHodD0cOJnYUckjnjMIWRd4BRZjpHC8x4KgVX70Wb7jH5Mb-KHRMtN0Is" target="_blank" class="btn-max"><img src="max-logo.png" alt="" style="width:18px;height:18px;border-radius:3px">MAX</a>
-  <a href="#" class="btn-phone" onclick="copyPhone();return false"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>Номер</a>
+  <a href="https://t.me/zhuravleva_mind" target="_blank" class="btn-tg"><svg viewBox="0 0 24 24"><path d="M5.5 11.2l10.8-4.5c.5-.2 1 .1.8.7l-2 9.5c-.1.5-.5.6-1 .4l-2.8-2-1.3 1.3c-.2.1-.3.2-.6.2l.2-2.8 5.1-4.6c.2-.2 0-.3-.3-.1l-6.3 3.9-2.7-.9c-.6-.2-.6-.6.1-.9z" fill="currentColor"/></svg></a>
+  <a href="https://max.ru/u/f9LHodD0cOJnYUckjnjMIWRd4BRZjpHC8x4KgVX70Wb7jH5Mb-KHRMtN0Is" target="_blank" class="btn-max"><img src="max-logo.png" alt=""></a>
+  <a href="#" class="btn-phone" onclick="copyPhone();return false"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg></a>
 </div>
 
 <script>
