@@ -595,7 +595,14 @@
 
   function updateCompass(){const ch=document.querySelectorAll('.compass-item input:checked'),r=document.getElementById('compassResult'),t=document.getElementById('compassTitle'),x=document.getElementById('compassText');if(ch.length===0){r.classList.remove('visible');return}r.classList.add('visible');if(ch.length>=3){t.textContent='Похоже, вам есть о чём поговорить ✨';x.textContent='Вы отметили несколько областей — часто одно связано с другим. Я работаю и с индивидуальными запросами, и с парами. Давайте начнём с первой встречи.'}else if(ch.length===1){const l={'c1':'трудностями в отношениях','c2':'тревогой','c3':'самооценкой','c4':'личными границами','c5':'выгоранием','c6':'эмоциональной зависимостью','c7':'конфликтами в паре','c8':'сексуальностью и близостью'};t.textContent='Я работаю с этим 🙌';x.textContent='Вы отметили запрос связанный с '+l[ch[0].id]+'. Это одно из моих основных направлений. Давайте обсудим вашу ситуацию лично.'}else{t.textContent='Я могу помочь с этим 💛';x.textContent='Вы отметили несколько важных тем. В моей практике они часто пересекаются. Давайте разбираться вместе.'}}
 
-  const PHONE='+7 909 738 87 30';function copyPhone(){navigator.clipboard.writeText(PHONE.replace(/\s/g,''));showToast('Номер скопирован: '+PHONE)}function downloadDiary(){window.open('ksusha-dnevnik-chuvstv.html','_blank')}
+  const PHONE='+7 909 738 87 30';
+  function copyPhone(){
+    const num=PHONE.replace(/\s/g,'');
+    const ok=()=>showToast('Номер скопирован: '+PHONE);
+    const fallback=()=>{const ta=document.createElement('textarea');ta.value=num;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');ok()}catch(e){showToast('Номер: '+PHONE)}ta.remove()};
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(num).then(ok).catch(fallback)}else{fallback()}
+  }
+  function downloadDiary(){window.open('ksusha-dnevnik-chuvstv.html','_blank')}
   function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._timeout);t._timeout=setTimeout(()=>t.classList.remove('show'),3000)}
   document.querySelectorAll('#navMenu a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('navMenu').classList.remove('open');document.getElementById('burger').classList.remove('active')})});
 </script>
