@@ -120,7 +120,7 @@
 
   /* === GALLERY === */
   .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:center}
-  .gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:16px;transition:transform 0.3s}
+  .gallery img{width:auto;max-width:100%;height:clamp(180px,calc((100vh - 150px)/2),420px);aspect-ratio:3/4;object-fit:cover;border-radius:16px;transition:transform 0.3s;margin:0 auto;display:block}
   .gallery img:hover{transform:scale(1.03)}
 
   /* === GIFT === */
@@ -304,6 +304,7 @@
     .compass-item label{font-size:13px;padding:12px 14px}.compass-item .emoji{font-size:18px}
     .section-title{font-size:clamp(24px,5vw,30px)}.section-subtitle{font-size:15px;max-width:100%}
     .gallery{grid-template-columns:repeat(3,1fr);gap:8px}
+    .gallery img{width:100%;height:auto;max-height:none}
     .float-contacts{display:flex;right:16px;bottom:24px}
     .float-bar{display:none}
     .float-bar a{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.9);box-shadow:0 2px 12px rgba(61,57,41,0.15);text-decoration:none;color:#3D3929}
@@ -327,6 +328,7 @@
     .compass-item label{font-size:11px;padding:10px 12px;gap:4px}.compass-item .emoji{font-size:15px}
     .men-section .section-title{font-size:24px}
     .gallery{grid-template-columns:repeat(2,1fr);gap:6px}
+    .gallery img{width:100%;height:auto;max-height:none}
     .faq-item summary{font-size:13px}.faq-item .answer{font-size:12px}
     footer{padding:28px 14px 16px}.footer-bottom{flex-direction:column;text-align:center}
   }
@@ -426,7 +428,6 @@
       <img src="ksusha-gal-5.jpg" alt="Ксения Журавлёва" loading="lazy">
       <img src="ksusha-gal-6.jpg" alt="Ксения Журавлёва" loading="lazy">
       <img src="ksusha-gal-7.jpg" alt="Ксения Журавлёва" loading="lazy">
-      <img src="ksusha-gal-8.jpg" alt="Ксения Журавлёва" loading="lazy">
       <img src="ksusha-gal-9.jpg" alt="Ксения Журавлёва" loading="lazy">
       <img src="ksusha-gal-10.jpg" alt="Ксения Журавлёва" loading="lazy">
     </div>
