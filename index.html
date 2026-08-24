@@ -16,7 +16,7 @@
 <link href="fonts/fonts-local.css" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
+  html{scroll-behavior:smooth;scroll-snap-type:y proximity}
   body{font-family:'Inter',-apple-system,sans-serif;font-weight:400;font-size:17px;line-height:1.65;color:#3D3929;background:#FDFAF5;-webkit-font-smoothing:antialiased}
   h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.2}
 
@@ -58,7 +58,7 @@
   /* === HERO === */
   .hero{height:100vh;display:flex;align-items:center;padding-top:64px;padding-bottom:0;background:linear-gradient(135deg,#FDFAF5 0%,#E8D5C4 40%,#C4D7C120 100%)}
   .hero .container{display:grid;grid-template-columns:0.9fr 1.1fr;column-gap:48px;align-items:center}
-  .hero-text{grid-column:1;grid-row:1}
+  .hero-text{grid-column:1;grid-row:1;position:relative;top:-56px}
   .hero-image{grid-column:2;grid-row:1/span 2}
   .hero-bottom{grid-column:1;grid-row:2}
   .hero-badge{display:inline-block;position:relative;top:-28px;padding:6px 16px;background:rgba(196,215,193,0.4);border-radius:999px;font-size:13px;font-weight:500;color:#5C7A5E;margin-bottom:20px}
@@ -161,7 +161,7 @@
   .pricing-features li::before{content:'✓';color:#7BAF7E;font-weight:700}
 
   /* === ABOUT === */
-  .about-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
   .about-photo{width:100%;max-height:84vh;aspect-ratio:1/2;margin-top:56px;border-radius:24px;overflow:hidden;box-shadow:0 16px 48px rgba(139,111,92,0.10)}
   .about-photo img{width:100%;height:100%;object-fit:cover}
   .about-text h2{margin-bottom:24px}
