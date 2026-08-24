@@ -54,7 +54,6 @@
 
   /* секции с шапкой сверху потоком, как «Мужской взгляд» */
   .men-layout{height:auto;min-height:100vh;justify-content:flex-start;padding:84px 40px 56px}
-  .gallery-section{height:auto;min-height:100vh;padding:88px 0 28px}
 
   /* === HERO === */
   .hero{height:100vh;display:flex;align-items:center;padding-top:64px;padding-bottom:0;background:linear-gradient(135deg,#FDFAF5 0%,#E8D5C4 40%,#C4D7C120 100%)}
@@ -128,9 +127,6 @@
   .doc-card .doc-sub{font-size:13px;color:#A0937D;line-height:1.5}
 
   /* === GALLERY === */
-  .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:center}
-  .gallery img{width:auto;max-width:100%;height:clamp(180px,calc((100vh - 150px)/2),420px);aspect-ratio:3/4;object-fit:cover;border-radius:16px;transition:transform 0.3s;margin:0 auto;display:block}
-  .gallery img:hover{transform:scale(1.03)}
 
   /* === GIFT === */
   .gift-card{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;background:#fff;border-radius:28px;padding:52px 44px;box-shadow:0 4px 24px rgba(139,111,92,0.05);border:1px solid rgba(160,147,125,0.08);max-width:900px;margin:0 auto}
@@ -221,11 +217,11 @@
 
   /* === FAQ === */
   .faq-item{border-bottom:1px solid rgba(160,147,125,0.15);padding:18px 0}
-  .faq-item summary{font-weight:500;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:#3D3929}
-  .faq-item summary::-webkit-details-marker{display:none}
-  .faq-item summary::after{content:'+';font-size:20px;color:#A0937D}
-  .faq-item[open] summary::after{content:'−'}
-  .faq-item .answer{padding-top:8px;font-size:15px;color:#5C5540;line-height:1.6}
+  .faq-q{width:100%;background:none;border:none;font-family:inherit;font-weight:500;font-size:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;text-align:left;color:#3D3929;padding:0}
+  .faq-q::after{content:'+';font-size:20px;color:#A0937D;flex-shrink:0;margin-left:12px}
+  .faq-item.open .faq-q::after{content:'−'}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height 0.25s ease;font-size:15px;color:#5C5540;line-height:1.6}
+  .faq-item.open .faq-a{max-height:400px;padding-top:8px}
 
   /* === FLOATING === */
   .float-contacts{position:fixed;right:20px;bottom:40px;z-index:99;display:flex;flex-direction:column;gap:10px}
@@ -264,8 +260,7 @@
     .gift-card{padding:24px 20px;gap:16px}.gift-icon{width:56px;height:56px;font-size:28px}.gift-text h3{font-size:17px}.gift-text p{font-size:13px}
     .cta-section{padding:40px 24px}.cta-card{padding:36px 28px}
     .doubt-card{padding:16px 14px}.doubt-card .fear{font-size:14px}.doubt-card .answer{font-size:13px}
-    .gallery{gap:10px}
-    .faq-item{padding:12px 0}.faq-item summary{font-size:14px}.faq-item .answer{font-size:13px}
+    .faq-item{padding:12px 0}.faq-q{font-size:14px}.faq-a{font-size:13px}
     footer{padding:36px 24px 20px}.footer-grid{gap:28px;margin-bottom:24px}.footer-brand h3{font-size:18px}
   }
 
@@ -293,7 +288,6 @@
     .about-grid{grid-template-columns:1fr;gap:28px}
     .about-photo{max-width:320px;margin:0 auto;aspect-ratio:1/2;max-height:none}
     #about{padding-top:84px}
-    .gallery-section{padding-top:84px}
     .about-text h2{font-size:26px}.about-text p{font-size:14px}
     .about-highlights{grid-template-columns:1fr}
     .process-steps{grid-template-columns:1fr;gap:28px}.process-steps::before{display:none}
@@ -312,8 +306,6 @@
     .compass-grid{grid-template-columns:repeat(2,1fr);gap:8px}
     .compass-item label{font-size:15px;padding:16px 14px}.compass-item .emoji{font-size:20px}
     .section-title{font-size:clamp(24px,5vw,30px)}.section-subtitle{font-size:15px;max-width:100%}
-    .gallery{grid-template-columns:repeat(3,1fr);gap:8px}
-    .gallery img{width:100%;height:auto;max-height:none}
     .docs-grid{grid-template-columns:1fr;max-width:380px;margin:0 auto}
     .float-contacts{display:flex;right:16px;bottom:24px}
     .float-bar{display:none}
@@ -337,9 +329,7 @@
     .compass-grid{grid-template-columns:1fr 1fr;gap:8px}
     .compass-item label{font-size:13px;padding:14px 12px;gap:6px}.compass-item .emoji{font-size:18px}
     .men-section .section-title{font-size:24px}
-    .gallery{grid-template-columns:repeat(2,1fr);gap:6px}
-    .gallery img{width:100%;height:auto;max-height:none}
-    .faq-item summary{font-size:13px}.faq-item .answer{font-size:12px}
+    .faq-q{font-size:13px}.faq-a{font-size:12px}
     footer{padding:28px 14px 16px}.footer-bottom{flex-direction:column;text-align:center}
   }
 </style>
@@ -428,18 +418,6 @@
   </div>
 </section>
 
-<section class="gallery-section">
-  <div style="width:92vw;margin:0 auto">
-    <div class="gallery">
-      <img src="ksusha-gal-1.jpg" alt="Ксения Журавлёва" loading="lazy">
-      <img src="ksusha-gal-2.jpg" alt="Ксения Журавлёва" loading="lazy">
-      <img src="ksusha-gal-4.jpg" alt="Ксения Журавлёва" loading="lazy">
-      <img src="ksusha-gal-6.jpg" alt="Ксения Журавлёва" loading="lazy">
-      <img src="ksusha-gal-7.jpg" alt="Ксения Журавлёва" loading="lazy">
-    </div>
-  </div>
-</section>
-
 <section class="men-layout" id="education" style="background:#fff;border-top:1px solid rgba(160,147,125,0.08)">
   <div class="container">
     <div class="section-label">Образование</div>
@@ -449,6 +427,8 @@
       <a class="doc-card" href="docs/diplom-seksualnaya-terapiya.pdf" target="_blank"><img src="docs/diplom-seksualnaya-terapiya.jpg" alt="Диплом о профессиональной переподготовке"><span class="doc-name">Сексуальная супружеская семейная терапия</span><span class="doc-sub">Диплом о профессиональной переподготовке · 880 часов · НЦРДО, 2025</span></a>
       <a class="doc-card" href="docs/diplom-institut-mirnoy.pdf" target="_blank"><img src="docs/diplom-institut-mirnoy.jpg" alt="Диплом о профессиональной переподготовке"><span class="doc-name">Диплом о профессиональной переподготовке</span><span class="doc-sub">Институт семейной психологии Инны Мирной · 2025–2026</span></a>
       <a class="doc-card" href="docs/diplom-perepodgotovka.pdf" target="_blank"><img src="docs/diplom-perepodgotovka.jpg" alt="Диплом о профессиональной переподготовке"><span class="doc-name">Диплом о профессиональной переподготовке</span><span class="doc-sub">Дополнительное профессиональное образование · 2025–2026</span></a>
+      <a class="doc-card" href="ksusha-sert-psiholog-praktik.jpg" target="_blank"><img src="ksusha-sert-psiholog-praktik.jpg" alt="Сертификат «Психолог-практик»"><span class="doc-name">Психолог-практик</span><span class="doc-sub">Обучающий курс · 18 академических часов · Институт семейной психологии, 2025</span></a>
+      <a class="doc-card" href="ksusha-sert-stop-razvod.jpg" target="_blank"><img src="ksusha-sert-stop-razvod.jpg" alt="Сертификат «Стоп развод»"><span class="doc-name">Стоп развод</span><span class="doc-sub">Интенсив по семейным отношениям · 15 академических часов · Институт семейной психологии, 2025</span></a>
     </div>
   </div>
 </section>
@@ -476,10 +456,10 @@
     <p class="section-subtitle" style="text-align:center;margin-left:auto;margin-right:auto">Мужчины реже идут к психологу. А зря. Вот что я об этом думаю.</p>
     <div class="men-grid">
       <div class="men-card"><div class="num">01</div><h3>Ты не «слабак»</h3><p>Слабый — тот кто годами живёт в аду и ничего не меняет. Прийти к психологу = взять ответственность за свою жизнь. Это по-мужски.</p></div>
-      <div class="men-card"><div class="num">03</div><h3>Про деньги и карьеру</h3><p>Выгорание, потеря драйва, конфликты в бизнесе — разберём вашу ситуацию честно и без иллюзий.</p></div>
-      <div class="men-card"><div class="num">04</div><h3>Про отношения — без истерик</h3><p>«Она меня не слышит», «мы как соседи». Всё можно наладить — если оба готовы. Разберёмся.</p></div>
-      <div class="men-card"><div class="num">05</div><h3>Всё строго конфиденциально</h3><p>В рамках встречи.</p></div>
-      <div class="men-card"><div class="num">06</div><h3>Первая встреча — проверим</h3><p>Просто поговорим. Не понравится — разошлись. Понравится — работаем. Никаких «давайте обнимемся».</p></div>
+      <div class="men-card"><div class="num">02</div><h3>Про деньги и карьеру</h3><p>Выгорание, потеря драйва, конфликты в бизнесе — разберём вашу ситуацию честно и без иллюзий.</p></div>
+      <div class="men-card"><div class="num">03</div><h3>Про отношения — без истерик</h3><p>«Она меня не слышит», «мы как соседи». Всё можно наладить — если оба готовы. Разберёмся.</p></div>
+      <div class="men-card"><div class="num">04</div><h3>Всё строго конфиденциально</h3><p>В рамках встречи.</p></div>
+      <div class="men-card"><div class="num">05</div><h3>Первая встреча — проверим</h3><p>Просто поговорим. Не понравится — разошлись. Понравится — работаем. Никаких «давайте обнимемся».</p></div>
     </div>
   </div>
 </section>
@@ -593,13 +573,13 @@
   <div class="container" style="max-width:720px">
     <div class="section-label">Частые вопросы</div>
     <h2 class="section-title" style="text-align:center;margin-top:56px;margin-bottom:32px">FAQ</h2>
-    <details class="faq-item"><summary>Нужно ли заранее точно сформулировать запрос?</summary><div class="answer">Нет. Достаточно рассказать, что сейчас вас беспокоит. Вместе мы уточним запрос и определим, с чего лучше начать.</div></details>
-    <details class="faq-item"><summary>Что будет на первой встрече?</summary><div class="answer">Мы познакомимся, обсудим вашу ситуацию, ожидания и возможные цели работы. Я расскажу о формате и отвечу на ваши вопросы.</div></details>
-    <details class="faq-item"><summary>Нужно ли рассказывать всё сразу?</summary><div class="answer">Нет. Вы сами определяете, чем готовы поделиться сейчас. Важно, чтобы вы чувствовали себя достаточно безопасно.</div></details>
-    <details class="faq-item"><summary>Как часто нужно встречаться?</summary><div class="answer">Частота встреч зависит от вашего запроса, состояния и возможностей. Обычно этот вопрос мы обсуждаем после первой консультации.</div></details>
-    <details class="faq-item"><summary>Всё ли останется конфиденциальным?</summary><div class="answer">Да, конфиденциальность — важная часть психологической работы. Исключения — только ситуации, предусмотренные законом.</div></details>
-    <details class="faq-item"><summary>Можно ли не продолжать после первой встречи?</summary><div class="answer">Да. Первая консультация — возможность познакомиться и понять, насколько вам подходит специалист и формат работы.</div></details>
-    <details class="faq-item"><summary>Что если я буду волноваться или не смогу начать?</summary><div class="answer">Это нормально. Можно прямо сказать: «Я волнуюсь и не знаю, с чего начать». Я помогу выстроить разговор.</div></details>
+    <div class="faq-item"><button type="button" class="faq-q" onclick="toggleFaq(this)">Нужно ли заранее точно сформулировать запрос?</button><div class="faq-a">Нет. Достаточно рассказать, что сейчас вас беспокоит. Вместе мы уточним запрос и определим, с чего лучше начать.</div></div>
+    <div class="faq-item"><button type="button" class="faq-q" onclick="toggleFaq(this)">Что будет на первой встрече?</button><div class="faq-a">Мы познакомимся, обсудим вашу ситуацию, ожидания и возможные цели работы. Я расскажу о формате и отвечу на ваши вопросы.</div></div>
+    <div class="faq-item"><button type="button" class="faq-q" onclick="toggleFaq(this)">Нужно ли рассказывать всё сразу?</button><div class="faq-a">Нет. Вы сами определяете, чем готовы поделиться сейчас. Важно, чтобы вы чувствовали себя достаточно безопасно.</div></div>
+    <div class="faq-item"><button type="button" class="faq-q" onclick="toggleFaq(this)">Как часто нужно встречаться?</button><div class="faq-a">Частота встреч зависит от вашего запроса, состояния и возможностей. Обычно этот вопрос мы обсуждаем после первой консультации.</div></div>
+    <div class="faq-item"><button type="button" class="faq-q" onclick="toggleFaq(this)">Всё ли останется конфиденциальным?</button><div class="faq-a">Да, конфиденциальность — важная часть психологической работы. Исключения — только ситуации, предусмотренные законом.</div></div>
+    <div class="faq-item"><button type="button" class="faq-q" onclick="toggleFaq(this)">Можно ли не продолжать после первой встречи?</button><div class="faq-a">Да. Первая консультация — возможность познакомиться и понять, насколько вам подходит специалист и формат работы.</div></div>
+    <div class="faq-item"><button type="button" class="faq-q" onclick="toggleFaq(this)">Что если я буду волноваться или не смогу начать?</button><div class="faq-a">Это нормально. Можно прямо сказать: «Я волнуюсь и не знаю, с чего начать». Я помогу выстроить разговор.</div></div>
   </div>
 </section>
 
@@ -645,6 +625,7 @@
   }
   function downloadDiary(){window.open('ksusha-dnevnik-chuvstv.html','_blank')}
   function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._timeout);t._timeout=setTimeout(()=>t.classList.remove('show'),3000)}
+  function toggleFaq(btn){const item=btn.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open')}
   document.querySelectorAll('#navMenu a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('navMenu').classList.remove('open');document.getElementById('burger').classList.remove('active')})});
 </script>
 </body>
