@@ -16,7 +16,7 @@
 <link href="fonts/fonts-local.css" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-snap-type:y proximity}
+  html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
   body{font-family:'Inter',-apple-system,sans-serif;font-weight:400;font-size:17px;line-height:1.65;color:#3D3929;background:#FDFAF5;-webkit-font-smoothing:antialiased}
   h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.2}
 
@@ -205,7 +205,7 @@
   .cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center}
 
   /* === FOOTER === */
-  footer{background:#3D3929;color:#C4BDB0;padding:56px 24px 32px;font-size:14px}
+  footer{background:#3D3929;color:#C4BDB0;padding:56px 24px 32px;font-size:14px;scroll-snap-align:start}
   footer .container{max-width:960px;margin:0 auto}
   .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px}
   .footer-brand h3{font-family:'Playfair Display',serif;font-size:22px;color:#FDFAF5;margin-bottom:8px}
@@ -424,6 +424,7 @@
     <h2 class="section-title" style="text-align:center;margin-top:28px">Дипломы и сертификаты</h2>
     <p class="section-subtitle" style="text-align:center;margin-left:auto;margin-right:auto">Профессиональная переподготовка и повышение квалификации.</p>
     <div class="docs-grid">
+      <a class="doc-card" href="docs/diplom-vysshee-tumen.pdf" target="_blank"><img src="docs/diplom-vysshee-tumen.jpg" alt="Диплом о высшем образовании"><span class="doc-name">Диплом о высшем образовании</span><span class="doc-sub">Тюменский государственный университет · 2005</span></a>
       <a class="doc-card" href="docs/diplom-seksualnaya-terapiya.pdf" target="_blank"><img src="docs/diplom-seksualnaya-terapiya.jpg" alt="Диплом о профессиональной переподготовке"><span class="doc-name">Сексуальная супружеская семейная терапия</span><span class="doc-sub">Диплом о профессиональной переподготовке · 880 часов · НЦРДО, 2025</span></a>
       <a class="doc-card" href="docs/diplom-institut-mirnoy.pdf" target="_blank"><img src="docs/diplom-institut-mirnoy.jpg" alt="Диплом о профессиональной переподготовке"><span class="doc-name">Диплом о профессиональной переподготовке</span><span class="doc-sub">Институт семейной психологии Инны Мирной · 2025–2026</span></a>
       <a class="doc-card" href="docs/diplom-perepodgotovka.pdf" target="_blank"><img src="docs/diplom-perepodgotovka.jpg" alt="Диплом о профессиональной переподготовке"><span class="doc-name">Диплом о профессиональной переподготовке</span><span class="doc-sub">Дополнительное профессиональное образование · 2025–2026</span></a>
