@@ -108,12 +108,12 @@
   <form id="postForm" onsubmit="return false">
     <div class="form-group">
       <label>Заголовок</label>
-      <input type="text" id="title" placeholder="Например: Как справляться с тревогой" required>
+      <input type="text" id="title" placeholder="Например: Как справляться с тревогой" required oninput="autoId()">
     </div>
 
     <div class="form-group">
-      <label>ID статьи (латиница через дефис)</label>
-      <input type="text" id="postId" placeholder="kak-spravlyatsya-s-trevogoy" required>
+      <label>ID статьи (автоматически из заголовка)</label>
+      <input type="text" id="postId" placeholder="kak-spravlyatsya-s-trevogoy" readonly style="background:#f5f5f5">
       <small>Используется в URL: /blog/post.html?id=your-id</small>
     </div>
 
@@ -159,10 +159,25 @@ const BRANCH = 'main';
 const FILE_PATH = 'blog/posts.json';
 
 // ===== UTILS =====
-function loadToken(){const t=localStorage.getItem('ksusha_gh_token');if(t)document.getElementById('ghToken').value=t;}
-function saveToken(){const t=document.getElementById('ghToken').value.trim();if(t)localStorage.setItem('ksusha_gh_token',t);}
+function loadToken(){const t=localStorage.getItem('ksusha_gh_token');if(t){document.getElementById('ghToken').value=t;showEditor();}}
+function saveToken(){const t=document.getElementById('ghToken').value.trim();if(t){localStorage.setItem('ksusha_gh_token',t);showEditor();}}
+function showEditor(){document.getElementById('tokenBox').style.display='none';document.getElementById('editorBox').style.display='block';loadPostsList();}
 function show(msg,isErr){const s=document.getElementById('status');s.textContent=msg;s.className='status '+(isErr?'error':'success')+' visible';}
 function hideStatus(){document.getElementById('status').classList.remove('visible');}
+
+function autoId(){
+  const title=document.getElementById('title').value.trim();
+  if(!title)return;
+  const map={
+    'а':'a','б':'b','в':'v','г':'g','д':'d','е':'e','ё':'yo','ж':'zh','з':'z','и':'i','й':'y',
+    'к':'k','л':'l','м':'m','н':'n','о':'o','п':'p','р':'r','с':'s','т':'t','у':'u','ф':'f',
+    'х':'kh','ц':'ts','ч':'ch','ш':'sh','щ':'shch','ъ':'','ы':'y','ь':'','э':'e','ю':'yu','я':'ya',
+    ' ':'-','_':'-','.':'','!':'','?':'',',':'',':':'',';':'','"':'',"'":'','«':'','»':'','—':'-'
+  };
+  let id=title.toLowerCase().split('').map(c=>map[c]||c).join('');
+  id=id.replace(/[^a-z0-9-]/g,'').replace(/-+/g,'-').replace(/^-|-$/g,'');
+  document.getElementById('postId').value=id;
+}
 
 function getFormData(){
   return {
