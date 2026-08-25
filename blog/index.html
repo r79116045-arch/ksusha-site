@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Блог — Ксения Журавлёва</title>
+<meta name="description" content="Статьи о психологии, отношениях, тревоге и самооценке. Практические мысли от психолога Ксении Журавлёвой.">
+<link rel="icon" type="image/png" href="../ksusha-logo.png">
+<link href="../fonts/fonts-local.css" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;font-weight:400;font-size:16px;line-height:1.65;color:#3D3929;background:#FDFAF5;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.2}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,250,245,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(160,147,125,0.15);padding:0 24px}
+  .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;height:64px}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:#3D3929;text-decoration:none;display:flex;align-items:center;gap:8px;flex-shrink:0}
+  .nav-logo img{width:auto;height:52px;object-fit:contain}
+  .nav-right{display:flex;align-items:center;gap:20px;margin-left:auto}
+  .nav-links{display:flex;gap:20px;list-style:none;align-items:center}
+  .nav-links a{text-decoration:none;color:#5C5540;font-size:14px;font-weight:450;transition:color 0.2s}
+  .nav-links a:hover{color:#8B6F5C}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101;background:none;border:none;padding:8px}
+  .burger span{display:block;width:24px;height:2px;background:#3D3929;border-radius:2px;transition:all 0.3s}
+  .burger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+  .burger.active span:nth-child(2){opacity:0}
+  .burger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 28px;border-radius:999px;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;text-decoration:none;cursor:pointer;transition:all 0.25s;border:none;white-space:nowrap}
+  .btn-primary{background:#8B6F5C;color:#fff;box-shadow:0 2px 12px rgba(139,111,92,0.25)}
+  .btn-primary:hover{background:#7A5F4D;transform:translateY(-1px);box-shadow:0 4px 20px rgba(139,111,92,0.35)}
+  .btn-outline{background:transparent;color:#8B6F5C;border:1.5px solid rgba(139,111,92,0.3)}
+  .btn-outline:hover{background:rgba(139,111,92,0.06);border-color:#8B6F5C}
+
+  .page-header{padding:120px 24px 48px;background:linear-gradient(135deg,#FDFAF5 0%,#E8D5C4 50%,#C4D7C120 100%);text-align:center}
+  .page-header h1{font-size:clamp(32px,5vw,52px);color:#3D3929;margin-bottom:12px}
+  .page-header p{font-size:18px;color:#5C5540;max-width:600px;margin:0 auto}
+
+  .container{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* === BLOG GRID === */
+  .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding:56px 0}
+  .blog-card{background:#fff;border-radius:20px;overflow:hidden;border:1px solid rgba(160,147,125,0.12);box-shadow:0 2px 12px rgba(139,111,92,0.04);transition:all 0.3s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+  .blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(139,111,92,0.10)}
+  .blog-card .thumb{width:100%;aspect-ratio:16/10;object-fit:cover;background:linear-gradient(135deg,#E8D5C4,#C4D7C1)}
+  .blog-card .body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+  .blog-card .date{font-size:12px;color:#A0937D;margin-bottom:8px}
+  .blog-card h3{font-size:19px;color:#3D3929;margin-bottom:10px;line-height:1.3}
+  .blog-card .excerpt{font-size:14px;color:#5C5540;line-height:1.55;margin-bottom:16px;flex:1}
+  .blog-card .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .blog-card .tag{font-size:11px;background:rgba(196,215,193,0.35);color:#3D5A3E;padding:4px 10px;border-radius:999px;font-weight:500}
+
+  /* === ADMIN LINK === */
+  .admin-bar{background:#fff;border-bottom:1px solid rgba(160,147,125,0.12);padding:12px 24px}
+  .admin-bar-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:flex-end;gap:12px;align-items:center}
+  .admin-bar a{font-size:13px;color:#A0937D;text-decoration:none;transition:color 0.2s}
+  .admin-bar a:hover{color:#8B6F5C}
+
+  footer{background:#3D3929;color:#C4BDB0;padding:56px 24px 32px;font-size:14px}
+  footer .container{max-width:960px;margin:0 auto}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px}
+  .footer-brand h3{font-family:'Playfair Display',serif;font-size:22px;color:#FDFAF5;margin-bottom:8px}
+  footer a{color:#C4BDB0;text-decoration:none;transition:color 0.2s}
+  footer a:hover{color:#FDFAF5}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .footer-links h4{color:#FDFAF5;margin-bottom:8px;font-size:13px;text-transform:uppercase;letter-spacing:0.05em}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px}
+
+  @media(max-width:900px){
+    .blog-grid{grid-template-columns:1fr 1fr;gap:24px}
+  }
+  @media(max-width:640px){
+    .blog-grid{grid-template-columns:1fr;gap:20px;padding:36px 0}
+    .page-header{padding:100px 20px 36px}
+    .page-header h1{font-size:28px}
+    .nav-links{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(253,250,245,0.96);backdrop-filter:blur(12px);flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid rgba(160,147,125,0.15);align-items:stretch}
+    .nav-links.open{display:flex}
+    .nav-links a{font-size:16px;padding:8px 0}
+    .burger{display:flex}
+    .footer-grid{grid-template-columns:1fr;gap:24px}
+  }
+</style>
+</head>
+<body>
+
+<div class="admin-bar">
+  <div class="admin-bar-inner">
+    <a href="admin.html">✎ Написать статью</a>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../ksusha-logo.png" alt="">Ксения Журавлёва</a>
+    <div class="nav-right">
+    <button class="burger" id="burger" onclick="document.getElementById('navMenu').classList.toggle('open');this.classList.toggle('active')" aria-label="Меню"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navMenu">
+      <li><a href="../index.html">Главная</a></li>
+      <li><a href="../index.html#about">Обо мне</a></li>
+      <li><a href="../index.html#contacts">Контакты</a></li>
+      <li><a href="https://max.ru/u/f9LHodD0cOJnYUckjnjMIWRd4BRZjpHC8x4KgVX70Wb7jH5Mb-KHRMtN0Is" class="btn btn-primary" style="padding:10px 24px;font-size:14px;font-weight:600;color:#fff">Записаться</a></li>
+    </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Блог</h1>
+  <p>Практические мысли о психологии, отношениях и себе. Без воды и сложных терминов.</p>
+</header>
+
+<main class="container">
+  <div class="blog-grid" id="blogGrid"></div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>Ксения Журавлёва</h3><p>Психолог (индивидуальные и семейные консультации). Помогаю людям и парам находить общий язык — с собой и друг с другом.</p></div>
+      <div><ul class="footer-links"><h4>Страницы</h4><li><a href="../index.html">Главная</a></li><li><a href="../index.html#about">Обо мне</a></li><li><a href="../index.html#contacts">Контакты</a></li></ul></div>
+      <div><ul class="footer-links"><h4>Связь</h4><li><a href="https://t.me/zhuravleva_mind">Telegram</a></li><li><a href="https://max.ru/u/f9LHodD0cOJnYUckjnjMIWRd4BRZjpHC8x4KgVX70Wb7jH5Mb-KHRMtN0Is" target="_blank">MAX</a></li><li><a href="mailto:zhuravleva_mind@mail.ru">zhuravleva_mind@mail.ru</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© Ксения Журавлёва, 2026</span><span>Все права защищены</span></div>
+  </div>
+</footer>
+
+<script>
+fetch('posts.json').then(r=>r.json()).then(posts=>{
+  const grid=document.getElementById('blogGrid');
+  posts.forEach(p=>{
+    const card=document.createElement('a');
+    card.className='blog-card';
+    card.href='post.html?id='+p.id;
+    card.innerHTML=`
+      <div class="thumb" style="background:linear-gradient(135deg,#E8D5C4,#C4D7C1)"></div>
+      <div class="body">
+        <div class="date">${new Date(p.date).toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'})}</div>
+        <h3>${p.title}</h3>
+        <p class="excerpt">${p.excerpt}</p>
+        <div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      </div>`;
+    grid.appendChild(card);
+  });
+});
+document.querySelectorAll('#navMenu a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navMenu').classList.remove('open');document.getElementById('burger').classList.remove('active')}));
+</script>
+</body>
+</html>

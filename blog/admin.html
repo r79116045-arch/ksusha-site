@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Написать статью — Ксения Журавлёва</title>
+<link rel="icon" type="image/png" href="../ksusha-logo.png">
+<link href="../fonts/fonts-local.css" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;font-weight:400;font-size:16px;line-height:1.65;color:#3D3929;background:#FDFAF5;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.2}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,250,245,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(160,147,125,0.15);padding:0 24px}
+  .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;height:64px}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:#3D3929;text-decoration:none;display:flex;align-items:center;gap:8px;flex-shrink:0}
+  .nav-logo img{width:auto;height:52px;object-fit:contain}
+  .nav-right{display:flex;align-items:center;gap:20px;margin-left:auto}
+
+  .page-header{padding:100px 24px 32px;background:linear-gradient(135deg,#FDFAF5 0%,#E8D5C4 50%,#C4D7C120 100%);text-align:center}
+  .page-header h1{font-size:clamp(28px,4.5vw,44px);color:#3D3929;margin-bottom:8px}
+  .page-header p{font-size:16px;color:#5C5540}
+
+  .container{max-width:720px;margin:0 auto;padding:0 24px}
+
+  .form-section{padding:40px 0 64px}
+  .field{margin-bottom:20px}
+  .field label{display:block;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:#A0937D;margin-bottom:6px}
+  .field input,.field textarea{width:100%;padding:14px 16px;border:1.5px solid rgba(160,147,125,0.25);border-radius:14px;font-family:inherit;font-size:15px;color:#3D3929;background:#fff;transition:border-color 0.2s}
+  .field input:focus,.field textarea:focus{outline:none;border-color:#8B6F5C}
+  .field textarea{min-height:180px;resize:vertical;line-height:1.6}
+  .field .hint{font-size:12px;color:#A0937D;margin-top:4px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:999px;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;text-decoration:none;cursor:pointer;transition:all 0.25s;border:none;white-space:nowrap}
+  .btn-primary{background:#8B6F5C;color:#fff;box-shadow:0 2px 12px rgba(139,111,92,0.25)}
+  .btn-primary:hover{background:#7A5F4D;transform:translateY(-1px)}
+  .btn-secondary{background:#C4D7C1;color:#3D5A3E}
+  .btn-secondary:hover{background:#B5C8B2}
+
+  .output{background:#fff;border:1.5px solid rgba(160,147,125,0.2);border-radius:16px;padding:20px;margin-top:24px;font-family:monospace;font-size:13px;line-height:1.5;overflow-x:auto;white-space:pre-wrap;word-break:break-word}
+  .output-label{font-size:12px;color:#A0937D;margin-bottom:8px;font-family:'Inter',sans-serif}
+
+  .steps{background:#fff;border-radius:16px;padding:24px;margin-bottom:32px;border:1px solid rgba(160,147,125,0.12)}
+  .steps h3{font-size:18px;margin-bottom:12px}
+  .steps ol{margin-left:20px}
+  .steps li{margin-bottom:8px;font-size:14px;color:#5C5540}
+
+  footer{background:#3D3929;color:#C4BDB0;padding:40px 24px 24px;font-size:14px;margin-top:40px}
+  footer .container{max-width:960px;margin:0 auto;text-align:center}
+
+  @media(max-width:640px){
+    .row2{grid-template-columns:1fr}
+    .page-header{padding:88px 20px 24px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../ksusha-logo.png" alt="">Ксения Журавлёва</a>
+    <div class="nav-right">
+      <a href="index.html" style="font-size:14px;color:#5C5540;text-decoration:none">← В блог</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <h1>Написать статью</h1>
+  <p>Заполните поля ниже → скопируйте код → отправьте мне (Петру) в Telegram</p>
+</header>
+
+<main class="container form-section">
+
+<div class="steps">
+  <h3>Как это работает</h3>
+  <ol>
+    <li>Заполните заголовок, дату, теги и текст статьи.</li>
+    <li>Нажмите «Сгенерировать код» — появятся два блока кода.</li>
+    <li>Скопируйте оба блока и отправьте мне в Telegram.</li>
+    <li>Я выложу статью на сайт — и она появится в блоге.</li>
+  </ol>
+</div>
+
+<div class="field">
+  <label>Заголовок</label>
+  <input type="text" id="title" placeholder="Например: Как справляться с тревогой">
+</div>
+
+<div class="row2">
+  <div class="field">
+    <label>Дата</label>
+    <input type="date" id="date">
+  </div>
+  <div class="field">
+    <label>Теги (через запятую)</label>
+    <input type="text" id="tags" placeholder="тревога, самопомощь">
+  </div>
+</div>
+
+<div class="field">
+  <label>Краткое описание (для списка статей)</label>
+  <input type="text" id="excerpt" placeholder="2–3 предложения о чём статья">
+</div>
+
+<div class="field">
+  <label>Текст статьи</label>
+  <textarea id="body" placeholder="Пишите здесь. Можно использовать простую разметку:
+
+Заголовок: ## Подзаголовок
+Жирный: **важное**
+Курсив: *мысль*
+Список:
+- пункт 1
+- пункт 2
+
+Цитата:
+> слова
+
+Блок:
+:::highlight
+Выделенный текст
+:::
+
+Параграфы — просто пустая строка между ними."></textarea>
+  <div class="hint">Поддерживает разметку: ## заголовок, **жирный**, *курсив*, - список, > цитата, :::highlight блок</div>
+</div>
+
+<div style="display:flex;gap:12px;margin-top:8px">
+  <button class="btn btn-primary" onclick="generate()">Сгенерировать код</button>
+  <button class="btn btn-secondary" onclick="preview()">Предпросмотр</button>
+</div>
+
+<div id="output" style="display:none">
+  <div class="output-label">📄 1. Код статьи (скопируйте и отправьте мне):</div>
+  <pre class="output" id="outHtml"></pre>
+  <div class="output-label" style="margin-top:16px">📋 2. Данные для списка (тоже отправьте мне):</div>
+  <pre class="output" id="outJson"></pre>
+</div>
+
+<div id="previewBox" style="display:none;margin-top:32px">
+  <h3 style="margin-bottom:12px">Предпросмотр</h3>
+  <div style="background:#fff;border:1.5px solid rgba(160,147,125,0.2);border-radius:16px;padding:24px" id="previewBody"></div>
+</div>
+
+</main>
+
+<footer>
+  <div class="container">© Ксения Журавлёва, 2026 · Все права защищены</div>
+</footer>
+
+<script>
+document.getElementById('date').valueAsDate=new Date();
+
+function mdToHtml(t){
+  return t
+    .replace(/^## (.*$)/gim,'<h2>$1</h2>')
+    .replace(/^### (.*$)/gim,'<h3>$1</h3>')
+    .replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
+    .replace(/\*(.*?)\*/g,'<em>$1</em>')
+    .replace(/^\> (.*$)/gim,'<blockquote>$1</blockquote>')
+    .replace(/^- (.*$)/gim,'<li>$1</li>')
+    .replace(/(:::\s*highlight\s*\n)([\s\S]*?)(\n:::\s*$)/gm,'<div class="highlight">$2</div>')
+    .replace(/(\n<h2>)/g,'</h2>$1')
+    .replace(/(\n<h3>)/g,'</h3>$1')
+    .replace(/(\n<blockquote>)/g,'</blockquote>$1')
+    .replace(/(\n<div class="highlight">)/g,'</div>$1')
+    .replace(/(<\/li>\n)(?!<li>)/g,'$1</ul>')
+    .replace(/(?!<\/li>\n)(<li>)/g,'<ul>$1')
+    .replace(/\n\n/g,'</p><p>')
+    .replace(/^(.+)$/gm,function(m){return m.match(/^\s*</)?m:'<p>'+m+'</p>';});
+}
+
+function slugify(t){return t.toLowerCase().replace(/[^а-яa-z0-9\s-]/g,'').trim().replace(/\s+/g,'-').substring(0,60);}
+
+function generate(){
+  const title=document.getElementById('title').value.trim();
+  const date=document.getElementById('date').value;
+  const tags=document.getElementById('tags').value.split(',').map(s=>s.trim()).filter(Boolean);
+  const excerpt=document.getElementById('excerpt').value.trim();
+  const body=document.getElementById('body').value.trim();
+  if(!title||!body){alert('Заполните заголовок и текст статьи');return;}
+  const id=slugify(title);
+  const html=mdToHtml(body);
+  const jsonObj={id,title,date,tags,excerpt,image:'blog/images/'+id+'.jpg'};
+  document.getElementById('outHtml').textContent=html;
+  document.getElementById('outJson').textContent=JSON.stringify(jsonObj,null,2)+',';
+  document.getElementById('output').style.display='block';
+  document.getElementById('output').scrollIntoView({behavior:'smooth'});
+}
+
+function preview(){
+  const body=document.getElementById('body').value.trim();
+  if(!body){alert('Введите текст статьи');return;}
+  document.getElementById('previewBody').innerHTML=mdToHtml(body);
+  document.getElementById('previewBox').style.display='block';
+}
+</script>
+</body>
+</html>
