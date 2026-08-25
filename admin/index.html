@@ -87,13 +87,12 @@
 
 <main class="container">
 
-  <div class="token-box">
-    <label>🔑 GitHub токен (сохраняется только в этом браузере)</label>
-    <input type="password" id="ghToken" placeholder="ghp_xxxxxxxxxxxx" onchange="saveToken()">
+  <div class="token-box" id="tokenBox">
+    <label>🔑 GitHub токен</label>
+    <input type="password" id="ghToken" placeholder="Вставьте токен сюда" onchange="saveToken()">
     <p>
-      Получить токен: <a href="https://github.com/settings/tokens/new?description=Ksusha%20Blog&scopes=repo" target="_blank">создать на GitHub</a>
-003e (права: repo → public_repo). <br>
-      Или просто сохраните статью как файл и отправьте его Пете в Telegram.
+      Токен нужен один раз — он сохранится в браузере.<br>
+      <strong style="color:#8B6F5C">Попросите токен у Пети в Telegram.</strong>
     </p>
   </div>
 
@@ -194,7 +193,7 @@ async function fetchPosts(){
   });
   if(!res.ok)throw new Error('Не удалось загрузить статьи');
   const data=await res.json();
-  const content=JSON.parse(atob(data.content));
+  const content=JSON.parse(decodeURIComponent(escape(atob(data.content))));
   return {posts: content.posts||content, sha: data.sha};
 }
 
