@@ -124,8 +124,23 @@
 </footer>
 
 <script>
+// Простой Markdown → HTML
+function mdToHtml(md){
+  return md
+    .replace(/^### (.*$)/gim,'<h3>$1</h3>')
+    .replace(/^## (.*$)/gim,'<h2>$1</h2>')
+    .replace(/^# (.*$)/gim,'<h1>$1</h1>')
+    .replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
+    .replace(/\*(.*?)\*/g,'<em>$1</em>')
+    .replace(/^\> (.*$)/gim,'<blockquote>$1</blockquote>')
+    .replace(/^\- (.*$)/gim,'<li>$1</li>')
+    .replace(/(<li>.*<\/li>)/s,'<ul>$1</ul>')
+    .replace(/\n/g,'<br>');
+}
+
 const id=new URLSearchParams(location.search).get('id');
-fetch('posts.json').then(r=>r.json()).then(posts=>{
+fetch('posts.json').then(r=>r.json()).then(data=>{
+  const posts = data.posts || data;
   const p=posts.find(x=>x.id===id);
   if(!p){document.getElementById('postTitle').textContent='Статья не найдена';document.getElementById('postBody').innerHTML='<p>Вернитесь в <a href="index.html">блог</a>.</p>';return;}
   document.title=p.title+' — Ксения Журавлёва';
@@ -133,13 +148,10 @@ fetch('posts.json').then(r=>r.json()).then(posts=>{
   document.getElementById('postTitle').textContent=p.title;
   document.getElementById('postMeta').innerHTML=`
     <span>${new Date(p.date).toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'})}</span>
-    ${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}`;
-  fetch('posts/'+p.id+'.html').then(r=>r.text()).then(html=>{
-    document.getElementById('postBody').innerHTML=html;
-  }).catch(()=>{
-    document.getElementById('postBody').innerHTML=`<p>${p.excerpt}</p>
-<p><em>Полный текст статьи скоро появится.</em></p>`;
-  });
+    ${(p.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}`;
+  // Рендерим body как Markdown
+  const bodyHtml = p.body ? mdToHtml(p.body) : `<p>${p.excerpt}</p><p><em>Полный текст статьи скоро появится.</em></p>`;
+  document.getElementById('postBody').innerHTML = bodyHtml;
 });
 document.querySelectorAll('#navMenu a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('navMenu').classList.remove('open');document.getElementById('burger').classList.remove('active')}));
 </script>

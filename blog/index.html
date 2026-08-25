@@ -126,7 +126,8 @@
 </footer>
 
 <script>
-fetch('posts.json').then(r=>r.json()).then(posts=>{
+fetch('posts.json').then(r=>r.json()).then(data=>{
+  const posts = data.posts || data;
   const grid=document.getElementById('blogGrid');
   posts.forEach(p=>{
     const card=document.createElement('a');
