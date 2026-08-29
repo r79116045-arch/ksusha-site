@@ -156,7 +156,8 @@
     </div>
 
     <div class="btn-group">
-      <button class="btn btn-primary" onclick="publish()">🚀 Опубликовать на сайт</button>
+      <button class="btn btn-primary" id="publishBtn" onclick="publish()">🚀 Опубликовать на сайт</button>
+      <button class="btn btn-outline" id="editCancelBtn" onclick="cancelEdit()" style="display:none">↩ Новая статья</button>
       <button class="btn btn-outline" onclick="downloadJson()">💾 Скачать JSON</button>
       <button class="btn btn-outline" onclick="preview()">👁 Предпросмотр</button>
     </div>
@@ -231,6 +232,38 @@ async function fetchPosts(){
   return {posts: content.posts||content, sha: data.sha};
 }
 
+// ===== EDIT =====
+let editingId=null;
+
+async function editPost(id){
+  try{
+    const {posts}=await fetchPosts();
+    const p=posts.find(x=>x.id===id);
+    if(!p){show('Статья не найдена',true);return;}
+    editingId=id;
+    document.getElementById('title').value=p.title;
+    document.getElementById('postId').value=p.id;
+    document.getElementById('date').value=p.date;
+    document.getElementById('tags').value=(p.tags||[]).join(', ');
+    document.getElementById('excerpt').value=p.excerpt;
+    document.getElementById('body').value=p.body||'';
+    document.getElementById('publishBtn').textContent='💾 Сохранить изменения';
+    document.getElementById('editCancelBtn').style.display='inline-flex';
+    document.getElementById('postForm').scrollIntoView({behavior:'smooth'});
+    show('✎ Редактируете: «'+p.title+'». Измените текст и нажмите «Сохранить изменения».');
+  }catch(e){show('❌ '+e.message,true);}
+}
+
+function cancelEdit(){
+  editingId=null;
+  document.getElementById('postForm').reset();
+  document.getElementById('date').valueAsDate=new Date();
+  document.getElementById('publishBtn').textContent='🚀 Опубликовать на сайт';
+  document.getElementById('editCancelBtn').style.display='none';
+  hideStatus();
+  show('Новая статья: заполните форму.');
+}
+
 async function publish(){
   hideStatus();
   const token=document.getElementById('ghToken').value.trim();
@@ -244,7 +277,7 @@ async function publish(){
   try{
     const {posts,sha}=await fetchPosts();
     const existing=posts.findIndex(p=>p.id===post.id);
-    if(existing>=-1)posts[existing]=post;else posts.push(post);
+    if(existing>=0)posts[existing]=post;else posts.push(post);
     posts.sort((a,b)=>new Date(b.date)-new Date(a.date));
     const newContent=btoa(unescape(encodeURIComponent(JSON.stringify({posts},null,2))));
 
@@ -257,7 +290,7 @@ async function publish(){
         'Content-Type':'application/json'
       },
       body:JSON.stringify({
-        message:`${existing>=-1?'Обновлена':'Добавлена'} статья: ${post.title}`,
+        message:`${existing>=0?'Обновлена':'Добавлена'} статья: ${post.title}`,
         content:newContent,
         sha:sha,
         branch:BRANCH
@@ -267,8 +300,8 @@ async function publish(){
       const errData=await res.json();
       throw new Error(errData.message||'Ошибка GitHub API');
     }
-    show('✅ Статья опубликована! Сайт обновится через 1–2 минуты.');
-    document.getElementById('postForm').reset();
+    show('✅ Статья '+(existing>=0?'обновлена':'опубликована')+'! Сайт обновится через 1–2 минуты.');
+    cancelEdit();
     loadPostsList();
   }catch(e){show('❌ '+e.message,true);}
 }
@@ -330,7 +363,10 @@ async function loadPostsList(){
             <div class="title">${p.title}</div>
             <div class="date">${p.date}</div>
           </div>
-          <a href="../blog/post.html?id=${p.id}" target="_blank" style="font-size:13px;color:#8B6F5C;text-decoration:none">Открыть →</a>
+          <div style="display:flex;gap:10px;align-items:center">
+            <a href="#" onclick="event.preventDefault();editPost('${p.id}')" style="font-size:13px;color:#8B6F5C;text-decoration:none">✎ Изменить</a>
+            <a href="../blog/post.html?id=${p.id}" target="_blank" style="font-size:13px;color:#8B6F5C;text-decoration:none">Открыть →</a>
+          </div>
         </div>
       `).join('');
     }
