@@ -103,6 +103,23 @@
     <div id="postsListContent"></div>
   </div>
 
+  <div id="editorBox" style="display:none">
+
+  <div style="background:#fff;border:1px solid rgba(160,147,125,0.15);border-radius:16px;padding:24px;margin-bottom:32px">
+    <h3 style="font-size:18px;margin-bottom:12px;color:#3D3929">📖 Как написать статью</h3>
+    <ol style="padding-left:20px;color:#5C5540;font-size:14px;line-height:1.8">
+      <li><strong>Заголовок</strong> — название статьи (ID создастся сам)</li>
+      <li><strong>Дата</strong> — когда опубликовать (по умолчанию сегодня)</li>
+      <li><strong>Теги</strong> — темы через запятую, например: <code>тревога, самопомощь</code></li>
+      <li><strong>Анонс</strong> — 2–3 предложения о чём статья (видно в списке статей)</li>
+      <li><strong>Текст</strong> — полная статья. Форматирование:
+        <code># заголовок</code> <code>**жирный**</code> <code>- список</code> <code>&gt; цитата</code>
+      </li>
+      <li>Жмите <strong>«👁 Предпросмотр»</strong> — посмотреть, как будет выглядеть</li>
+      <li>Жмите <strong>«🚀 Опубликовать»</strong> — статья появится на сайте через 1–2 минуты</li>
+    </ol>
+  </div>
+
   <h2 style="margin-bottom:20px;font-size:22px">✎ Новая статья</h2>
 
   <form id="postForm" onsubmit="return false">
@@ -148,6 +165,8 @@
   <div id="previewBox" style="margin-top:40px;display:none">
     <h3 style="margin-bottom:16px">Предпросмотр</h3>
     <div style="background:#fff;border:1px solid rgba(160,147,125,0.15);border-radius:16px;padding:32px" id="previewContent"></div>
+  </div>
+
   </div>
 
 </main>
